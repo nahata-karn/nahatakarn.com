@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Prevent scrolling on the body */
 }
 
 .container {
@@ -25,6 +26,8 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 100vh;
+    overflow-y: auto; /* Allow scrolling within container if needed */
 }
 
 /* Header styles */
@@ -33,13 +36,15 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     flex: 1;
     gap: 16px;
+    min-height: 100%;
+    padding: 20px 0;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     color: #000;
 }
@@ -47,7 +52,7 @@ h1 {
 .bio {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: #333;
 }
@@ -55,14 +60,14 @@ h1 {
 .tagline {
     font-style: italic;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 14px;
     color: #000;
     font-weight: bold;
 }
 
 .golden-record {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     animation: spin 60s linear infinite;
@@ -107,7 +112,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     padding: 0 16px;
 }
 
@@ -130,8 +135,8 @@ h1 {
 }
 
 .button-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     margin-bottom: 8px;
     object-fit: contain;
 }
@@ -141,27 +146,85 @@ h1 {
     font-weight: bold;
 }
 
+/* Back button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+}
+
+/* Content styles */
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.content p {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+.content ul {
+    list-style-position: inside;
+    margin: 16px 0;
+}
+
+.content li {
+    margin-bottom: 12px;
+}
+
+.content li:last-child {
+    margin-bottom: 0;
+}
+
 /* Desktop adjustments */
 @media (min-width: 768px) {
-    .container {
-        padding: 32px;
+    h1 {
+        font-size: 36px;
     }
 
-    h1 {
-        font-size: 42px;
+    .bio {
+        font-size: 16px;
+    }
+
+    .tagline {
+        font-size: 16px;
     }
 
     .golden-record {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
     }
 
     .button-icon {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     .button-text {
+        font-size: 16px;
+    }
+
+    .content p {
         font-size: 16px;
     }
 }
@@ -182,51 +245,4 @@ h1 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-}
-
-/* Content styles */
-.content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.content p {
-    margin-bottom: 16px;
-}
-
-.content p:last-child {
-    margin-bottom: 0;
-}
-
-.content ul {
-    list-style-position: inside;
-    margin: 16px 0;
-}
-
-.content li {
-    margin-bottom: 12px;
-}
-
-.content li:last-child {
-    margin-bottom: 0;
-}
-
-/* Back button */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #000;
-    background: #fff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: transform 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-}
-
-.back-button:hover {
-    transform: scale(1.05);
 } 
