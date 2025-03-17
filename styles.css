@@ -274,4 +274,120 @@ h1 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+/* Work page styles */
+.intro-text {
+    max-width: 600px;
+    margin: 0 auto 24px;
+    text-align: left;
+    padding: 0 16px;
+}
+
+.intro-text p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+.work-grid {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.work-card {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 0.2s;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+}
+
+.work-card-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.work-description {
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px) {
+    .intro-text {
+        margin-bottom: 32px;
+    }
+
+    .intro-text p {
+        font-size: 16px;
+    }
+
+    .work-card-content {
+        padding: 32px;
+    }
+
+    .company-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .work-description {
+        font-size: 16px;
+    }
+}
+
+/* Work detail page styles */
+.work-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.company-logo-large {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.company-name {
+    font-size: 18px;
+    color: #666;
+    margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+    .company-logo-large {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 24px;
+    }
+
+    .company-name {
+        font-size: 20px;
+    }
 } 
