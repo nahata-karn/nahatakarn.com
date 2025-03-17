@@ -15,19 +15,16 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevent scrolling on the body */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 16px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: 100vh;
-    overflow-y: auto; /* Allow scrolling within container if needed */
 }
 
 /* Header styles */
@@ -36,15 +33,12 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: space-between;
-    flex: 1;
     gap: 16px;
-    min-height: 100%;
-    padding: 20px 0;
+    padding: 16px 0;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     color: #000;
 }
@@ -52,22 +46,22 @@ h1 {
 .bio {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.5;
     color: #333;
 }
 
 .tagline {
     font-style: italic;
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 8px;
+    font-size: 13px;
     color: #000;
     font-weight: bold;
 }
 
 .golden-record {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     animation: spin 60s linear infinite;
@@ -110,10 +104,11 @@ h1 {
 .nav-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 8px;
     width: 100%;
-    max-width: 500px;
-    padding: 0 16px;
+    max-width: 400px;
+    padding: 0 8px;
+    margin-top: 8px;
 }
 
 .nav-button {
@@ -124,7 +119,7 @@ h1 {
     text-decoration: none;
     color: #000;
     background: #fff;
-    padding: 12px;
+    padding: 8px;
     border-radius: 8px;
     transition: transform 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -135,14 +130,14 @@ h1 {
 }
 
 .button-icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 8px;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
     object-fit: contain;
 }
 
 .button-text {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -154,12 +149,13 @@ h1 {
     text-decoration: none;
     color: #000;
     background: #fff;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     transition: transform 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 16px;
+    font-size: 13px;
 }
 
 .back-button:hover {
@@ -171,12 +167,12 @@ h1 {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
-    padding: 0 20px;
+    padding: 0 16px;
 }
 
 .content p {
     margin-bottom: 16px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .content p:last-child {
@@ -190,6 +186,7 @@ h1 {
 
 .content li {
     margin-bottom: 12px;
+    font-size: 13px;
 }
 
 .content li:last-child {
@@ -198,16 +195,26 @@ h1 {
 
 /* Desktop adjustments */
 @media (min-width: 768px) {
+    .container {
+        padding: 24px;
+    }
+
+    header {
+        padding: 24px 0;
+    }
+
     h1 {
         font-size: 36px;
     }
 
     .bio {
         font-size: 16px;
+        line-height: 1.6;
     }
 
     .tagline {
         font-size: 16px;
+        margin-top: 12px;
     }
 
     .golden-record {
@@ -215,16 +222,38 @@ h1 {
         height: 160px;
     }
 
+    .nav-buttons {
+        gap: 16px;
+        max-width: 500px;
+        padding: 0 16px;
+        margin-top: 16px;
+    }
+
+    .nav-button {
+        padding: 12px;
+    }
+
     .button-icon {
         width: 40px;
         height: 40px;
+        margin-bottom: 8px;
     }
 
     .button-text {
         font-size: 16px;
     }
 
-    .content p {
+    .back-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 0 24px;
+    }
+
+    .content p,
+    .content li {
         font-size: 16px;
     }
 }
