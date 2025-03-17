@@ -1,0 +1,125 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    color: #000;
+    background-color: #f5f5f5;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.device-header {
+    display: none; /* Hide the iPhone header */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.avatar {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.bio {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tagline {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Links grid */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; /* Reduced from 20px to 12px */
+    padding: 15px; /* Reduced from 20px to 15px */
+}
+
+.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    padding: 15px; /* Reduced from 20px to 15px */
+    transition: transform 0.2s;
+}
+
+.link-card:hover {
+    transform: scale(1.05);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+    
+    .bio {
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 30px;
+    }
+    
+    .links-grid {
+        gap: 8px; /* Further reduced for mobile */
+        padding: 10px;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+} 
