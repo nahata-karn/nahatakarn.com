@@ -26,63 +26,24 @@
             </div>
             <img src="images/golden-record.png" alt="NASA Voyager Golden Record" class="golden-record">
             <nav class="nav-buttons">
-                <a href="#work" class="nav-button">
+                <a href="work.html" class="nav-button">
                     <img src="images/game.png" alt="Crossed swords icon" class="button-icon">
                     <span class="button-text">My Work</span>
                 </a>
-                <a href="#ideas" class="nav-button">
+                <a href="ideas.html" class="nav-button">
                     <img src="images/head.png" alt="Brain icon" class="button-icon">
                     <span class="button-text">Ideas</span>
                 </a>
-                <a href="#writing" class="nav-button">
+                <a href="writing.html" class="nav-button">
                     <img src="images/book.png" alt="Writing icon" class="button-icon">
                     <span class="button-text">Writing</span>
                 </a>
-                <a href="#stanford" class="nav-button">
+                <a href="stanford.html" class="nav-button">
                     <img src="images/block-s-right.webp" alt="Stanford logo" class="button-icon">
                     <span class="button-text">Stanford</span>
                 </a>
             </nav>
         </header>
-
-        <section id="work" class="content-section">
-            <h2>My Work</h2>
-            <div class="section-content">
-                <!-- Work content will go here -->
-            </div>
-        </section>
-
-        <section id="ideas" class="content-section">
-            <h2>Ideas</h2>
-            <div class="section-content">
-                <!-- Ideas content will go here -->
-            </div>
-        </section>
-
-        <section id="writing" class="content-section">
-            <h2>Writing</h2>
-            <div class="section-content">
-                <!-- Writing content will go here -->
-            </div>
-        </section>
-
-        <section id="stanford" class="content-section">
-            <h2>Stanford</h2>
-            <div class="section-content">
-                <!-- Stanford content will go here -->
-            </div>
-        </section>
     </div>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html> 
