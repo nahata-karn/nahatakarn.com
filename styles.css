@@ -20,7 +20,7 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 24px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -33,38 +33,41 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 16px;
-    padding: 16px 0;
+    gap: 24px;
+    padding: 24px 0;
 }
 
 h1 {
     font-size: 28px;
     font-weight: bold;
     color: #000;
+    margin-bottom: 8px;
 }
 
 .bio {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.8;
     color: #333;
+    padding: 0 16px;
 }
 
 .tagline {
     font-style: italic;
-    margin-top: 8px;
-    font-size: 13px;
+    margin-top: 16px;
+    font-size: 14px;
     color: #000;
     font-weight: bold;
 }
 
 .golden-record {
-    width: 120px;
-    height: 120px;
+    width: 203px;
+    height: 203px;
     border-radius: 50%;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     animation: spin 60s linear infinite;
+    margin: 16px 0;
 }
 
 @keyframes spin {
@@ -104,11 +107,11 @@ h1 {
 .nav-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 12px;
     width: 100%;
     max-width: 400px;
-    padding: 0 8px;
-    margin-top: 8px;
+    padding: 0 16px;
+    margin-top: 16px;
 }
 
 .nav-button {
@@ -119,7 +122,7 @@ h1 {
     text-decoration: none;
     color: #000;
     background: #fff;
-    padding: 8px;
+    padding: 12px;
     border-radius: 8px;
     transition: transform 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -137,8 +140,9 @@ h1 {
 }
 
 .button-text {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
+    margin-top: 8px;
 }
 
 /* Back button */
@@ -149,13 +153,13 @@ h1 {
     text-decoration: none;
     color: #000;
     background: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 8px;
     transition: transform 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     font-weight: bold;
-    margin-top: 16px;
-    font-size: 13px;
+    margin-top: 24px;
+    font-size: 14px;
 }
 
 .back-button:hover {
@@ -196,56 +200,56 @@ h1 {
 /* Desktop adjustments */
 @media (min-width: 768px) {
     .container {
-        padding: 24px;
+        padding: 32px;
     }
 
     header {
-        padding: 24px 0;
+        padding: 32px 0;
+        gap: 32px;
     }
 
     h1 {
         font-size: 36px;
+        margin-bottom: 16px;
     }
 
     .bio {
         font-size: 16px;
-        line-height: 1.6;
+        line-height: 1.8;
+        padding: 0 24px;
     }
 
     .tagline {
         font-size: 16px;
-        margin-top: 12px;
+        margin-top: 24px;
     }
 
     .golden-record {
-        width: 160px;
-        height: 160px;
+        width: 270px;
+        height: 270px;
+        margin: 24px 0;
     }
 
     .nav-buttons {
         gap: 16px;
         max-width: 500px;
-        padding: 0 16px;
-        margin-top: 16px;
+        padding: 0 24px;
+        margin-top: 24px;
     }
 
     .nav-button {
-        padding: 12px;
-    }
-
-    .button-icon {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 8px;
+        padding: 16px;
     }
 
     .button-text {
         font-size: 16px;
+        margin-top: 12px;
     }
 
     .back-button {
-        padding: 12px 24px;
+        padding: 16px 32px;
         font-size: 16px;
+        margin-top: 32px;
     }
 
     .content {
@@ -254,6 +258,14 @@ h1 {
 
     .content p,
     .content li {
+        font-size: 16px;
+    }
+
+    .intro-text {
+        padding: 0 24px;
+    }
+
+    .intro-text p {
         font-size: 16px;
     }
 }
@@ -280,7 +292,7 @@ h1 {
 .intro-text {
     max-width: 600px;
     margin: 0 auto;
-    padding: 24px 16px;
+    padding: 0 16px;
     text-align: center;
 }
 
@@ -288,6 +300,7 @@ h1 {
     margin-bottom: 16px;
     font-size: 14px;
     line-height: 1.8;
+    color: #333;
 }
 
 .work-grid {
@@ -298,14 +311,22 @@ h1 {
 }
 
 .work-card {
-    display: block;
     text-decoration: none;
-    margin-bottom: 16px;
-    transition: transform 0.2s;
+    color: inherit;
+    display: block;
+    position: relative;
 }
 
-.work-card:hover {
-    transform: translateY(-4px);
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .work-card-content {
@@ -316,6 +337,14 @@ h1 {
     display: flex;
     align-items: center;
     gap: 4px;
+    border: 2px solid #eee;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.work-card:hover .work-card-content {
+    border-color: #F37E1B;
+    box-shadow: 0 8px 24px rgba(243, 126, 27, 0.15);
 }
 
 .company-logo {
@@ -328,7 +357,7 @@ h1 {
 .work-description {
     flex: 1;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.8;
     color: #F37E1B;
     text-align: left;
     margin: 0;
@@ -343,8 +372,8 @@ h1 {
     }
     
     .work-description {
-        font-size: 15px;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.8;
     }
 }
 
