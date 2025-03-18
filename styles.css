@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Space Mono', monospace;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #000;
     background-color: #fff;
     padding: 0;
@@ -20,11 +20,10 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 24px;
-    background-color: #fff;
+    padding: 48px 24px;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    align-items: center;
 }
 
 /* Header styles */
@@ -33,7 +32,7 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: 16px;
     padding: 24px 0;
 }
 
@@ -145,25 +144,39 @@ h1 {
     margin-top: 8px;
 }
 
-/* Back button */
-.back-button {
-    display: inline-flex;
+/* Back arrow button */
+.back-arrow {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: #000;
-    background: #fff;
-    padding: 12px 24px;
-    border-radius: 8px;
     transition: transform 0.2s;
+    z-index: 10;
+    background: #fff;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-    margin-top: 24px;
-    font-size: 14px;
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
 }
 
-.back-button:hover {
+.back-arrow:hover {
     transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .back-arrow {
+        top: 32px;
+        left: 32px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
 }
 
 /* Content styles */
@@ -200,22 +213,21 @@ h1 {
 /* Desktop adjustments */
 @media (min-width: 768px) {
     .container {
-        padding: 32px;
+        padding: 64px 32px;
     }
 
     header {
         padding: 32px 0;
-        gap: 32px;
+        gap: 24px;
     }
 
     h1 {
         font-size: 36px;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
 
     .bio {
         font-size: 16px;
-        line-height: 1.8;
         padding: 0 24px;
     }
 
@@ -246,12 +258,6 @@ h1 {
         margin-top: 12px;
     }
 
-    .back-button {
-        padding: 16px 32px;
-        font-size: 16px;
-        margin-top: 32px;
-    }
-
     .content {
         padding: 0 24px;
     }
@@ -261,8 +267,12 @@ h1 {
         font-size: 16px;
     }
 
+    .work-page h1 {
+        margin-bottom: 48px;
+    }
+
     .intro-text {
-        padding: 0 24px;
+        margin-bottom: 64px;
     }
 
     .intro-text p {
@@ -291,13 +301,12 @@ h1 {
 /* Work page styles */
 .intro-text {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 0 16px;
+    margin: 0 auto 48px;
     text-align: center;
 }
 
 .intro-text p {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-size: 14px;
     line-height: 1.8;
     color: #333;
@@ -306,7 +315,6 @@ h1 {
 .work-grid {
     width: 100%;
     max-width: 600px;
-    padding: 0 16px;
     margin: 0 auto;
 }
 
@@ -315,18 +323,6 @@ h1 {
     color: inherit;
     display: block;
     position: relative;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
 }
 
 .work-card-content {
@@ -340,6 +336,18 @@ h1 {
     border: 2px solid #eee;
     transition: all 0.3s ease;
     animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .work-card:hover .work-card-content {
@@ -363,7 +371,6 @@ h1 {
     margin: 0;
 }
 
-/* Desktop adjustments */
 @media (min-width: 768px) {
     .company-logo {
         width: 80px;
@@ -372,8 +379,7 @@ h1 {
     }
     
     .work-description {
-        font-size: 16px;
-        line-height: 1.8;
+        font-size: 14px;
     }
 }
 
@@ -405,5 +411,458 @@ h1 {
 
     .company-name {
         font-size: 20px;
+    }
+}
+
+/* Swiggy page styles */
+.swiggy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.swiggy-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: -4px;
+}
+
+.year-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+.position-text {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+    font-family: 'Space Mono', monospace;
+    margin-top: -2px;
+}
+
+.swiggy-description {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-style: italic;
+    color: #333;
+    max-width: 600px;
+    text-align: center;
+}
+
+.swiggy-text {
+    text-align: left;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.swiggy-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.swiggy-text li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.swiggy-text li:last-child {
+    margin-bottom: 0;
+}
+
+.swiggy-text + .swiggy-button {
+    margin-top: 0;
+    max-width: 320px;
+}
+
+.swiggy-text strong {
+    font-weight: normal;
+    color: #F37E1B;
+}
+
+.swiggy-button {
+    width: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.preview-box {
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.preview-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #F37E1B;
+}
+
+.swiggy-button:hover .preview-box {
+    border-color: #F37E1B;
+    box-shadow: 0 8px 24px rgba(243, 126, 27, 0.15);
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px) {
+    .swiggy-content {
+        padding: 0;
+    }
+
+    .swiggy-logo {
+        width: 140px;
+        height: 140px;
+        margin-bottom: -4px;
+    }
+
+    .position-text {
+        margin-bottom: 32px;
+    }
+
+    .swiggy-description {
+        margin-bottom: 32px;
+    }
+
+    .swiggy-text {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .swiggy-text + .swiggy-button {
+        max-width: 280px;
+    }
+
+    .preview-text {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        padding: 40px;
+    }
+
+    .modal-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .modal-text h3 {
+        font-size: 18px;
+    }
+
+    .modal-description {
+        font-size: 16px;
+    }
+
+    .modal-link {
+        font-size: 16px;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 32px;
+    border-radius: 16px;
+    max-width: 600px;
+    position: relative;
+    width: 90%;
+}
+
+.close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-preview {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.modal-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.modal-text h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.modal-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.modal-link {
+    display: inline-block;
+    color: #F37E1B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modal-link:hover {
+    text-decoration: underline;
+}
+
+/* News preview styles */
+.news-preview {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.news-image {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.news-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.news-source {
+    font-size: 9px;
+    color: #333;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-headline {
+    font-size: 10px;
+    line-height: 1;
+    color: #000;
+    font-weight: normal;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-excerpt {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.swiggy-button:hover .news-preview {
+    border-color: #F37E1B;
+    box-shadow: 0 8px 24px rgba(243, 126, 27, 0.15);
+}
+
+@media (min-width: 768px) {
+    .news-preview {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .news-image {
+        width: 28px;
+        height: 28px;
+    }
+
+    .news-source {
+        font-size: 10px;
+    }
+
+    .news-headline {
+        font-size: 11px;
+    }
+}
+
+.news-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.news-links .swiggy-button {
+    flex: 1;
+    min-width: 240px;
+    max-width: 280px;
+}
+
+@media (min-width: 768px) {
+    .news-links {
+        gap: 16px;
+        padding: 0;
+    }
+
+    .news-links .swiggy-button {
+        min-width: 260px;
+        max-width: 280px;
+    }
+}
+
+/* Swiggy info page styles */
+.swiggy-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.swiggy-info .intro-text {
+    margin: 48px 0 16px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.swiggy-info ol {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.swiggy-info ol li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.info-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 24px auto;
+    display: block;
+}
+
+.info-text {
+    margin-top: 32px;
+}
+
+.info-text p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.info-text h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 32px 0 16px;
+    color: #000;
+}
+
+.info-text ol {
+    margin-bottom: 32px;
+}
+
+.info-text li {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.info-text li strong {
+    color: #F37E1B;
+    font-weight: normal;
+}
+
+.info-text p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .swiggy-info .intro-text {
+        margin: 64px 0 24px;
+        font-size: 16px;
+    }
+
+    .swiggy-info p,
+    .swiggy-info ol li {
+        font-size: 16px;
+    }
+
+    .info-text p,
+    .info-text li,
+    .info-text h2 {
+        font-size: 16px;
+    }
+
+    .info-image {
+        max-width: 400px;
+        margin: 32px auto;
+    }
+
+    .info-text {
+        margin-top: 48px;
+    }
+
+    .info-text h2 {
+        margin: 48px 0 24px;
+    }
+
+    .info-text ol {
+        margin-bottom: 48px;
+    }
+
+    .info-text li {
+        margin-bottom: 24px;
     }
 } 

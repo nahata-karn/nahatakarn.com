@@ -3,22 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiggy - My Work</title>
+    <title>Swiggy - Karn Nahata</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="work.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+    
     <div class="container">
-        <header>
-            <div class="work-header">
-                <img src="images/swiggy.png" alt="Swiggy logo" class="company-logo-large">
-                <h1>Strategy & Planning Lead</h1>
-                <p class="company-name">Swiggy</p>
+        <div class="swiggy-content">
+            <img src="images/swiggy.png" alt="Swiggy logo" class="swiggy-logo">
+            <div class="year-text">2019-21</div>
+            <div class="position-text">Strategy & Planning</div>
+            
+            <p class="swiggy-description">
+                India's largest food delivery and quick commerce platform, Swiggy moves 2 million hyperlocal orders every single day! Started in 2014, it went public in 2024.
+            </p>
+
+            <div class="swiggy-buttons">
+                <div class="news-links">
+                    <a href="https://www.reuters.com/markets/deals/institutional-part-swiggys-14-bln-india-ipo-is-fully-subscribed-2024-11-08/" class="swiggy-button" target="_blank">
+                        <div class="news-preview">
+                            <img src="images/swiggy-news.avif" alt="Swiggy IPO" class="news-image">
+                            <div class="news-content">
+                                <div class="news-source">Reuters</div>
+                                <div class="news-headline">Institutional part of Swiggy's $1.4 bln India IPO is fully subscribed</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/posts/karnnahata_today-as-swiggybecomes-indias-second-quick-activity-7261059798572412928-BNlV?utm_source=share&utm_medium=member_desktop" class="swiggy-button" target="_blank">
+                        <div class="news-preview">
+                            <img src="images/swiggy-bag.jpeg" alt="Swiggy Quick Commerce" class="news-image">
+                            <div class="news-content">
+                                <div class="news-source">LinkedIn</div>
+                                <div class="news-headline">My take on quick commerce in India</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiggy-text">
+                    <ul>
+                        <li>I hopped on board in 2019, back when Swiggy was in just 30 cities.</li>
+                        <li>By the time I left in 2021, <strong>it was live in more than 500 cities</strong> and had navigated two pandemic waves.</li>
+                        <li>I was on the Strategy & Planning team, specifically in charge of Pan-India <strong>Demand-Supply Planning</strong>.</li>
+                        <li>Leading over a hundred teammates scattered across the country, I owned core KPIs like <strong>delivery speed, driver incentives, driver earnings, and driver utilization</strong>.</li>
+                    </ul>
+                </div>
+
+                <a href="swiggy-details.html" class="swiggy-button">
+                    <div class="news-preview">
+                        <img src="images/book.png" alt="Swiggy Details" class="news-image">
+                        <div class="news-content">
+                            <div class="news-source">Deep Dive</div>
+                            <div class="news-headline">Geek out about my work at Swiggy</div>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <a href="work.html" class="back-button">Back to Work</a>
-        </header>
+
+            <!-- Modal for News Article -->
+            <div id="newsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-preview">
+                        <img src="images/reuters.png" alt="Reuters" class="modal-image">
+                        <div class="modal-text">
+                            <h3>Institutional part of Swiggy's $1.4 bln India IPO is fully subscribed</h3>
+                            <p class="modal-description">The institutional portion of Indian food delivery startup Swiggy's $1.4 billion initial public offering (IPO) was fully subscribed on its first day...</p>
+                        </div>
+                    </div>
+                    <a href="https://www.reuters.com/markets/deals/institutional-part-swiggys-14-bln-india-ipo-is-fully-subscribed-2024-11-08/" target="_blank" class="modal-link">Read full article on Reuters →</a>
+                </div>
+            </div>
+
+            <!-- Modal for LinkedIn -->
+            <div id="linkedinModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-preview">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="modal-image">
+                        <div class="modal-text">
+                            <h3>Today, as Swiggy becomes India's second quick commerce IPO...</h3>
+                            <p class="modal-description">I can't help but think back to March 22, 2020—the first day of India's lockdown. I was glued to our order dashboard, watching in shock as volumes dropped by nearly 90%...</p>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/posts/karnnahata_today-as-swiggybecomes-indias-second-quick-activity-7261059798572412928-BNlV" target="_blank" class="modal-link">View on LinkedIn →</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Modal functionality
+        function setupModal(buttonId, modalId) {
+            const modal = document.getElementById(modalId);
+            const btn = document.getElementById(buttonId);
+            const span = modal.getElementsByClassName("close")[0];
+
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        setupModal("newsButton", "newsModal");
+        setupModal("linkedinButton", "linkedinModal");
+    </script>
 </body>
 </html> 
