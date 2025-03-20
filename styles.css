@@ -316,6 +316,9 @@ h1 {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .work-card {
@@ -331,8 +334,8 @@ h1 {
     padding: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
-    gap: 4px;
+    align-items: flex-start;
+    gap: 12px;
     border: 2px solid #eee;
     transition: all 0.3s ease;
     animation: float 3s ease-in-out infinite;
@@ -355,15 +358,31 @@ h1 {
     box-shadow: 0 8px 24px rgba(243, 126, 27, 0.15);
 }
 
+.logo-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-height: 50px;
+}
+
 .company-logo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    margin-right: 4px;
+    flex-shrink: 0;
 }
 
 .work-description {
-    flex: 1;
     font-size: 14px;
     line-height: 1.8;
     color: #F37E1B;
@@ -371,15 +390,50 @@ h1 {
     margin: 0;
 }
 
+/* Logo size adjustment for Avanti */
+.work-card:nth-child(2) .company-logo {
+    width: 31px;
+    height: 31px;
+}
+
+/* Color override specifically for Avanti card */
+.work-card:nth-child(2) .work-description {
+    color: #F2CE00;
+}
+
+.work-card:nth-child(2):hover .work-card-content {
+    border-color: #F2CE00;
+    box-shadow: 0 8px 24px rgba(242, 206, 0, 0.15);
+}
+
 @media (min-width: 768px) {
-    .company-logo {
-        width: 80px;
-        height: 80px;
-        margin-right: 8px;
+    .work-card-content {
+        padding: 16px;
+        gap: 16px;
     }
     
-    .work-description {
-        font-size: 14px;
+    .logo-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .text-container {
+        min-height: 60px;
+    }
+    
+    .company-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Desktop logo size adjustment for Avanti */
+    .work-card:nth-child(2) .company-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .work-grid {
+        gap: 19px;
     }
 }
 
@@ -428,6 +482,14 @@ h1 {
 .swiggy-logo {
     width: 120px;
     height: 120px;
+    object-fit: contain;
+    margin-bottom: -4px;
+}
+
+/* Override for Avanti logo size - make it smaller to match Swiggy */
+.avanti-content .swiggy-logo {
+    width: 96px;
+    height: 96px;
     object-fit: contain;
     margin-bottom: -4px;
 }
@@ -533,7 +595,12 @@ h1 {
     .swiggy-logo {
         width: 140px;
         height: 140px;
-        margin-bottom: -4px;
+    }
+    
+    /* Desktop override for Avanti logo */
+    .avanti-content .swiggy-logo {
+        width: 120px;
+        height: 120px;
     }
 
     .position-text {
@@ -974,7 +1041,7 @@ h1 {
     opacity: 1;
     visibility: visible;
     margin-bottom: 24px;
-    border-color: transparent;
+    border-color: transparent !important;
 }
 
 /* Add a class to the trigger bubble when its tray is active */
@@ -1343,5 +1410,270 @@ h1 {
     
     .mentor-name {
         font-size: 16px;
+    }
+}
+
+/* Avanti page styles */
+.avanti-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Summary section for Avanti */
+.avanti-summary {
+    text-align: left;
+    margin-top: 36px;
+    margin-bottom: 36px;
+    max-width: 600px;
+}
+
+.avanti-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.avanti-summary li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: #333;
+    position: relative;
+    padding-left: 24px;
+}
+
+.avanti-summary li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.avanti-summary li:last-child {
+    margin-bottom: 0;
+}
+
+.avanti-summary strong {
+    font-weight: normal;
+    color: #F2CE00;
+}
+
+/* Override company-specific colors for Avanti */
+.avanti-content .swiggy-text strong {
+    color: #F2CE00;
+}
+
+.avanti-content a.swiggy-button:hover .news-preview {
+    border-color: #F2CE00;
+    box-shadow: 0 8px 24px rgba(242, 206, 0, 0.15);
+}
+
+.avanti-content .project-bubble:hover,
+.avanti-content .project-trigger.active {
+    border-color: #F2CE00;
+}
+
+.avanti-content .details-content h3 {
+    color: #F2CE00;
+}
+
+.avanti-content .learning-content h3 {
+    color: #F2CE00;
+}
+
+.avanti-content .mentor-name a {
+    color: #F2CE00;
+}
+
+@media (min-width: 768px) {
+    .avanti-content {
+        padding: 0;
+    }
+    
+    .avanti-summary {
+        margin-top: 48px;
+        margin-bottom: 48px;
+    }
+    
+    .avanti-summary li {
+        font-size: 16px;
+        padding-left: 28px;
+    }
+    
+    .avanti-summary li:before {
+        font-size: 20px;
+    }
+}
+
+/* Override company-specific colors for Avanti */
+.avanti-content .project-bubble.active,
+.avanti-content .project-trigger.active,
+.avanti-button:hover .news-preview {
+    border-color: #F2CE00;
+}
+
+.avanti-content .project-details.active {
+    border-color: transparent !important;
+}
+
+.avanti-content h3,
+.avanti-content em,
+.avanti-content strong,
+.avanti-content .news-preview:hover .news-headline,
+.avanti-content .project-details h3,
+.avanti-content .project-details h4,
+.avanti-content .learning-content h3 {
+    color: #F2CE00;
+}
+
+/* Style for the Try Out Plio button */
+.try-plio-button {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #F2CE00;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.try-plio-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Override to make bold text inside paragraphs black instead of yellow for Avanti */
+.avanti-content .project-details p strong {
+    color: #000;
+    font-weight: bold;
+}
+
+.avanti-content .learning-content p strong {
+    color: #000;
+    font-weight: bold;
+}
+
+.avanti-summary strong {
+    font-weight: normal;
+    color: #F2CE00;
+}
+
+/* Override for Avanti logo size - make it smaller to match Swiggy */
+.avanti-content .swiggy-logo {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    margin-bottom: -4px;
+}
+
+.avanti-content .news-preview .news-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .avanti-content .news-preview .news-image {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* Override for Avanti logo size - make it smaller to match Swiggy */
+.avanti-content .swiggy-logo {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    margin-bottom: -4px;
+}
+
+.news-image-container {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avanti-content .news-preview .news-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Avanti-specific overrides for media buttons */
+.avanti-button {
+    width: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.avanti-button:hover .news-preview {
+    border-color: #F2CE00;
+    box-shadow: 0 8px 24px rgba(242, 206, 0, 0.15);
+}
+
+/* Override to prevent Avanti news headline from changing color on hover */
+.avanti-button:hover .news-headline {
+    color: #000;
+}
+
+.avanti-content .news-headline {
+    color: #000;
+}
+
+@media (min-width: 768px) {
+    .news-image-container {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .avanti-content .news-preview .news-image {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px auto 32px;
+    max-width: 600px;
+}
+
+.image-caption {
+    font-size: 11px;
+    color: #555;
+    margin-top: 6px;
+    text-align: center;
+    font-style: italic;
+}
+
+@media (min-width: 768px) {
+    .image-container {
+        margin: 24px auto 40px;
+    }
+    
+    .image-caption {
+        font-size: 12px;
+        margin-top: 8px;
     }
 } 

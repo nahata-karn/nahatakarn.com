@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work at Avanti Fellows - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="work.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+
+    <div class="container">
+        <div class="avanti-content">
+            <img src="images/logo_2.jpg" alt="Avanti Fellows Logo" class="swiggy-logo">
+            <div class="year-text">2021-23</div>
+            <div class="position-text">Head of Product</div>
+            
+            <p class="swiggy-description">I led Product for Avanti Fellows - India's largest ed-tech building at scale for public school students.</p>
+            
+            <div class="image-container">
+                <img src="images/teach.jpg" alt="User testing in a village" class="info-image">
+                <p class="image-caption">Me doing some user testing in a village in North India</p>
+            </div>
+            
+            <div class="avanti-summary">
+                <ul>
+                    <li>I joined Avanti Fellows in 2021 to build out their product and analytics team. <strong>I built and led a lean team of seven</strong> (engineers, PMs, analysts)</li>
+                    <li>Before the pandemic, Avanti was an offline only STEM learning company, helping high-school students get placed in India's top engineering and medical colleges. During the pandemic, as digital adoption in India grew, Avanti shifted to an online only model</li>
+                    <li>Today, Avanti is the <strong>largest STEM learning platform</strong> focussed on building for rural and public school students in India.</li>
+                    <li>It partners with <strong>10+ large state governments</strong> in India to roll out its product and is funded by the Dell Foundation, Infosys, TATA group, JP Morgan, ACT, and Capgemini</li>
+                </ul>
+            </div>
+
+            <div class="cool-projects">
+                <h2>COOL PROJECTS I LED</h2>
+                <div class="project-bubble project-trigger" id="project-trigger-1">
+                    <p><span class="emoji">🎬</span> Built an interactive video platform and grew it to <em>50k users with 5x retention</em></p>
+                </div>
+                
+                <div class="project-details" id="project-details-1">
+                    <div class="details-content">
+                        <span class="close-details">&times;</span>
+                        <p>I built <a href="https://www.plio.in/" target="_blank">PLIO</a>: a tool that enables teachers to convert any YouTube video into an interactive lesson which they can easily share with their students over WhatsApp and get detailed student level analytics.</p>
+                        
+                        <h3>Problem:</h3>
+                        <p>When I joined Avanti Fellows COVID had derailed India's public-school system. WhatsApp groups and YouTube videos helped, but <strong style="color:#000; font-weight:bold;">75%+ of students dropped off within 60 seconds</strong>, and teachers had no way to track progress. Through field interviews, we found passive YouTube lessons bored students, especially in rural settings with poor connectivity and low digital fluency. Most online tools weren't built for these constraints (language issues, shaky internet, shared family devices).</p>
+                        
+                        <h3>Insight:</h3>
+                        <p>Adding interactive questions to videos turns "viewing" into "learning." So we built a tool allowing teachers to intersperse questions between any existing YouTube video, converting it into an interactive lesson. To increase accessibility, it was designed as a simple, light weight, web application capable of supporting 15+ regional languages. Most importantly, it armed teachers with detailed analytics to track each student's learning progress.</p>
+                        
+                        <h3>Result:</h3>
+                        <p>The questions inside the video created a gamified learning experience, boosting retention 5x within two weeks of PLIO's launch. <strong style="color:#000; font-weight:bold;">Today, PLIO lessons reach millions of students and have improved Avanti's program learning outcomes by 60%</strong>. It is a completely free and open source tool.</p>
+                        
+                        <h3>Future possibilities with AI:</h3>
+                        <p><strong>Auto-Generated Questions:</strong> One major bottleneck was content creation—teachers manually drafted every interactive video. With LLMs, we can generate contextually relevant interactive videos at scale. This frees teachers to spend more time on actual teaching, problem-solving, and one-on-one mentorship.</p>
+                        <p><strong>Adaptive Learning Paths:</strong> When a student answers a question, AI can immediately assess their mastery and redirect them to the right follow-up content—whether that's a remedial mini-lesson, a different segment of the same video, or a more challenging module. The learning experience becomes truly personalized, matching each student's pace and skill level.</p>
+                        
+                        <div style="margin-top: 32px; margin-bottom: 32px; text-align: center;">
+                            <a href="https://www.plio.in/" target="_blank" class="try-plio-button">
+                                Try Out Plio!
+                            </a>
+                        </div>
+                        
+                        <div class="bottom-close">
+                            <button class="close-details-bottom">&times;</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-bubble project-trigger" id="project-trigger-2">
+                    <p><span class="emoji">🔐</span> Built a modular tool to solve authentication and learning profiling of <em>100k+ rural students</em></p>
+                </div>
+                
+                <div class="project-details" id="project-details-2">
+                    <div class="details-content">
+                        <span class="close-details">&times;</span>
+                        
+                        <h3>Problem:</h3>
+                        <p>One of the biggest hurdles in rural ed-tech is simply identifying who's who. Most authentication flows assume each user has a stable email address or phone number, but that assumption breaks when students share a single family phone, swap SIM cards, or lack personal emails. So we designed a custom layer that solved these challenges.</p>
+                        
+                        <h3>Lightweight, Modular Login:</h3>
+                        <p>We built a web-based login system that could function even on low-bandwidth connections. Instead of heavy, app-based solutions, we used simple sign-on links students could tap from WhatsApp or SMS. Once clicked, a unique token (school provided ID) tied to that student's profile would log them in. No complicated form fields, no repeated OTP verifications—just a frictionless path into lessons or quizzes.</p>
+                        
+                        <h3>Seamless Integration with all our products:</h3>
+                        <p>We wanted one login to unlock all our offerings—videos, quizzes, group discussions—without forcing students to re-verify every time they switched platforms. The authentication layer was designed as a stand-alone module that plugged into multiple products, from PLIO to our gamified quiz engine. Once a student was recognized, each tool "knew" who was learning, which lessons they'd completed, and what their skill level might be.</p>
+                        
+                        <h3>Enabling Adaptive Learning:</h3>
+                        <p>With reliable identity in place, we could funnel each student to content that actually matched their needs. If a ninth grader was reading at a seventh-grade level, the system automatically surfaced the right materials. If a student excelled in math but struggled in English, they'd see extra reading exercises.</p>
+                        <p>This approach dramatically boosted engagement and learning outcomes since students weren't left floundering in lessons too advanced for them—or bored by lessons that were too easy.</p>
+                        
+                        <div class="bottom-close">
+                            <button class="close-details-bottom">&times;</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-bubble project-trigger" id="project-trigger-3">
+                    <p><span class="emoji">🎮</span> Deployed a gamified quizzing platform and scaled it to <em>100k+ users in 6 months</em></p>
+                </div>
+                
+                <div class="project-details" id="project-details-3">
+                    <div class="details-content">
+                        <span class="close-details">&times;</span>
+                        
+                        <p>After seeing how embedding questions into videos (PLIO) skyrocketed engagement, we realized assessments themselves had untapped potential. Students craved immediate feedback and a sense of progress—two things a plain quiz can't always provide. So we built a gamified quiz engine that did more than just test knowledge:</p>
+                        
+                        <h3>Short, Snackable Quizzes:</h3>
+                        <p>We broke down topics into bite-sized assessments. Each quiz took no more than a few minutes, keeping momentum high and minimizing "quiz fatigue."</p>
+                        <p>This format also worked better for students with patchy internet or shared phones—quick bursts of learning instead of hour-long deep dives.</p>
+                        
+                        <h3>Real-Time Feedback and Analytics:</h3>
+                        <p>Teachers got a dashboard highlighting class-wide trouble spots—if 70% of the group bombed a question on fractions, the teacher could pivot lessons or create a targeted remedial quiz.</p>
+                        
+                        <h3>Catered to Varied Skill Levels:</h3>
+                        <p>When combined with our custom authentication layer, the engine could serve quizzes tailored to each student's level. If someone struggled with decimals, they'd get extra drills before moving on to more complex problems. This adaptive approach ensured students received just the right amount of challenge—enough to stay engaged without feeling overwhelmed.</p>
+                        
+                        <h3>Low Tech Footprint:</h3>
+                        <p>Quizzes were designed to load quickly on 2G or 3G networks. The interface was kept clean and intuitive, mindful that many users lacked prior exposure to online learning tools.</p>
+                        
+                        <div style="margin-top: 32px; margin-bottom: 32px; text-align: center;">
+                            <a href="https://quiz.avantifellows.org/quiz/65114ad4ee82be971eb06363?apiKey=6qOO8UdF1EGxLgzwIbQN&userId=karn" target="_blank" class="try-plio-button">
+                                Try a Quiz!
+                            </a>
+                        </div>
+                        
+                        <div class="bottom-close">
+                            <button class="close-details-bottom">&times;</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-bubble project-trigger" id="project-trigger-4">
+                    <p><span class="emoji">🏛️</span> Consulted the Delhi Government on building a LMS for <em>2k+ schools and 2M+ students</em></p>
+                </div>
+                
+                <div class="project-details" id="project-details-4">
+                    <div class="details-content">
+                        <span class="close-details">&times;</span>
+                        
+                        <p>Avanti Fellows partnered with state governments to run online programs for public school students. The Delhi Government, under AAP's education mandate, wanted a comprehensive LMS that could track every student's progress—assignments, projects, tests—all in one place.</p>
+                        
+                        <p>They also aimed to launch an "online-only school" for remote learners, ensuring uninterrupted education even when physical classes weren't an option.</p>
+                        
+                        <p>Another priority was detailed analytics for ministry leadership. Policymakers needed hard data on student performance to guide everything from curriculum tweaks to teacher training initiatives.</p>
+                        
+                        <h3>My Role</h3>
+                        
+                        <p><strong>Technology Partner Sourcing:</strong> I led the effort to identify and hire the right engineering firm to build the LMS at scale. This involved evaluating multiple vendors on cost, experience, and the ability to handle 2 million users without service disruptions.</p>
+                        
+                        <p><strong>Architecture & Taxonomy:</strong> I collaborated with the Avanti team and government stakeholders to design an overall system structure. We mapped out how students, teachers, and administrators would interact with the platform, and how data would flow securely among them.</p>
+                        
+                        <p><strong>Executive Hiring:</strong> Worked through multiple layers of bureaucracy to help the government hire a "CTO"-type figure—someone who could own the technical roadmap, maintain quality control, and align day-to-day development with the broader vision.</p>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        
+                        <p><strong>Complex Bureaucratic Environment:</strong> Convincing various departments to unify their data requirements demanded diplomacy and persistent follow-ups. I helped articulate why a single, well-integrated platform was preferable to a patchwork of smaller tools.</p>
+                        
+                        <p><strong>Scalability:</strong> A user base of 2 million students and 2,000+ schools meant the system needed robust architecture—from load balancing to secure data storage. We structured the platform to scale both horizontally (adding servers on demand) and vertically (upgrading existing infrastructure).</p>
+                        
+                        <p><strong>Security & Privacy:</strong> Aggregating individual student profiles (including test scores and personal data) required airtight data security. We implemented role-based access controls and end-to-end encryption policies where feasible.</p>
+                        
+                        <div class="bottom-close">
+                            <button class="close-details-bottom">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learnings-section">
+                <h2>LEARNINGS AND FAILURES</h2>
+                
+                <div class="learning-item">
+                    <div class="check-icon">✅</div>
+                    <div class="learning-content">
+                        <h3>Building 0–1 Software Products</h3>
+                        <p>I had never built a product from scratch before, so figuring out everything from interface design (on Figma) to overall tech architecture was a trial by fire. Collaborating closely with engineers pushed me to improve my technical capabilties.</p>
+                    </div>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="check-icon">✅</div>
+                    <div class="learning-content">
+                        <h3>Hiring</h3>
+                        <p>Assembling a capable team was the highest leverage move I made. Identifying talent was relatively straightforward, but designing skills and values-based tests required a lot of iteration. The effort paid off with a group that not only delivered but also shared a deeper mission focus.</p>
+                    </div>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="check-icon">✅</div>
+                    <div class="learning-content">
+                        <h3>Fundraising</h3>
+                        <p>As the product lead I often also led a lot of our fundraising efforts which helped me build my story telling and pitching muscle. I helped raise more than $2M+ in grants.</p>
+                    </div>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="check-icon">✅</div>
+                    <div class="learning-content">
+                        <h3>Working with Tough Stakeholders</h3>
+                        <p>Some of our most important partners—public sector agencies, large NGOs—had complex decision-making chains. Navigating these relationships taught an ability to position solutions in a way that addressed each stakeholder's concerns and motivations.</p>
+                    </div>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="check-icon">😅</div>
+                    <div class="learning-content">
+                        <h3>Not Learning Growth Hacking</h3>
+                        <p>Our user base exploded thanks to government partnerships rather than classic user-acquisition strategies. I didn't get to exercise traditional "growth hacks," and that's a skill gap I'd like to fill.</p>
+                    </div>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="check-icon">😅</div>
+                    <div class="learning-content">
+                        <h3>Losing Patience with Stakeholders</h3>
+                        <p>A few roadblocks tested my resilience. Instead of recharging and re-engaging, I let frustration lower my motivation. In hindsight, putting in more effort to communicate and empathize might have unlocked more impact.</p>
+                    </div>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="check-icon">😅</div>
+                    <div class="learning-content">
+                        <h3>Missing Out on Delight</h3>
+                        <p>Accessibility was a major priority, but in focusing so hard on utility, I wish I'd spent more time on the "delight factor." A bit more creativity in design and interface could have further engaged our users.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mentors-section">
+                <h2>MENTORS/PEOPLE I LOOKED UPTO AT AVANTI</h2>
+                
+                <div class="mentor-item">
+                    <div class="mentor-icon">🙏🏽</div>
+                    <div class="mentor-content">
+                        <p class="mentor-name"><a href="https://www.cnbctv18.com/business/akshay-saxena-awarded-social-entrepreneur-of-the-year-2024-19474226.htm" target="_blank">Akshay Saxena</a></p>
+                    </div>
+                </div>
+                
+                <div class="mentor-item">
+                    <div class="mentor-icon">🙏🏽</div>
+                    <div class="mentor-content">
+                        <p class="mentor-name"><a href="https://www.linkedin.com/in/pritamps/?originalSubdomain=in" target="_blank">Pritam Sukumar</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-section">
+                <h2>MEDIA LINKS</h2>
+                <div class="news-links">
+                    <a href="https://www.business-standard.com/content/press-releases-ani/avanti-fellows-receives-a-total-funding-of-usd-4-5-m-from-its-supporters-to-realize-its-vision-of-creating-a-self-resilient-education-ecosystem-for-bharat-120111201465_1.html" target="_blank" class="avanti-button">
+                        <div class="news-preview">
+                            <div class="news-image-container">
+                                <img src="images/avanti.webp" alt="Avanti Fellows" class="news-image">
+                            </div>
+                            <div class="news-content">
+                                <p class="news-source">Business Standard</p>
+                                <p class="news-headline">Avanti Fellows receives USD 4.5M funding to create education ecosystem for Bharat</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all project triggers and their corresponding details
+            const projectTrigger1 = document.getElementById('project-trigger-1');
+            const projectDetails1 = document.getElementById('project-details-1');
+            const projectTrigger2 = document.getElementById('project-trigger-2');
+            const projectDetails2 = document.getElementById('project-details-2');
+            const projectTrigger3 = document.getElementById('project-trigger-3');
+            const projectDetails3 = document.getElementById('project-details-3');
+            const projectTrigger4 = document.getElementById('project-trigger-4');
+            const projectDetails4 = document.getElementById('project-details-4');
+            
+            // Get all close buttons
+            const closeButtons = document.querySelectorAll('.close-details');
+            const closeBottomButtons = document.querySelectorAll('.close-details-bottom');
+            
+            // Toggle function for project details
+            projectTrigger1.addEventListener('click', function() {
+                if (projectDetails2.classList.contains('active') || projectDetails3.classList.contains('active') || projectDetails4.classList.contains('active')) {
+                    projectDetails2.classList.remove('active');
+                    projectTrigger2.classList.remove('active');
+                    projectDetails3.classList.remove('active');
+                    projectTrigger3.classList.remove('active');
+                    projectDetails4.classList.remove('active');
+                    projectTrigger4.classList.remove('active');
+                }
+                projectDetails1.classList.toggle('active');
+                projectTrigger1.classList.toggle('active');
+            });
+            
+            projectTrigger2.addEventListener('click', function() {
+                if (projectDetails1.classList.contains('active') || projectDetails3.classList.contains('active') || projectDetails4.classList.contains('active')) {
+                    projectDetails1.classList.remove('active');
+                    projectTrigger1.classList.remove('active');
+                    projectDetails3.classList.remove('active');
+                    projectTrigger3.classList.remove('active');
+                    projectDetails4.classList.remove('active');
+                    projectTrigger4.classList.remove('active');
+                }
+                projectDetails2.classList.toggle('active');
+                projectTrigger2.classList.toggle('active');
+            });
+            
+            projectTrigger3.addEventListener('click', function() {
+                if (projectDetails1.classList.contains('active') || projectDetails2.classList.contains('active') || projectDetails4.classList.contains('active')) {
+                    projectDetails1.classList.remove('active');
+                    projectTrigger1.classList.remove('active');
+                    projectDetails2.classList.remove('active');
+                    projectTrigger2.classList.remove('active');
+                    projectDetails4.classList.remove('active');
+                    projectTrigger4.classList.remove('active');
+                }
+                projectDetails3.classList.toggle('active');
+                projectTrigger3.classList.toggle('active');
+            });
+            
+            projectTrigger4.addEventListener('click', function() {
+                if (projectDetails1.classList.contains('active') || projectDetails2.classList.contains('active') || projectDetails3.classList.contains('active')) {
+                    projectDetails1.classList.remove('active');
+                    projectTrigger1.classList.remove('active');
+                    projectDetails2.classList.remove('active');
+                    projectTrigger2.classList.remove('active');
+                    projectDetails3.classList.remove('active');
+                    projectTrigger3.classList.remove('active');
+                }
+                projectDetails4.classList.toggle('active');
+                projectTrigger4.classList.toggle('active');
+            });
+            
+            // Close buttons functionality
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const panel = this.closest('.project-details');
+                    panel.classList.remove('active');
+                    
+                    // Find the corresponding trigger and remove its active class
+                    if (panel.id === 'project-details-1') {
+                        projectTrigger1.classList.remove('active');
+                    } else if (panel.id === 'project-details-2') {
+                        projectTrigger2.classList.remove('active');
+                    } else if (panel.id === 'project-details-3') {
+                        projectTrigger3.classList.remove('active');
+                    } else if (panel.id === 'project-details-4') {
+                        projectTrigger4.classList.remove('active');
+                    }
+                });
+            });
+            
+            closeBottomButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const panel = this.closest('.project-details');
+                    panel.classList.remove('active');
+                    
+                    // Find the corresponding trigger and remove its active class
+                    if (panel.id === 'project-details-1') {
+                        projectTrigger1.classList.remove('active');
+                    } else if (panel.id === 'project-details-2') {
+                        projectTrigger2.classList.remove('active');
+                    } else if (panel.id === 'project-details-3') {
+                        projectTrigger3.classList.remove('active');
+                    } else if (panel.id === 'project-details-4') {
+                        projectTrigger4.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
