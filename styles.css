@@ -451,7 +451,7 @@ h1 {
 .swiggy-description {
     font-size: 14px;
     line-height: 1.8;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-style: italic;
     color: #333;
     max-width: 600px;
@@ -460,8 +460,8 @@ h1 {
 
 .swiggy-text {
     text-align: left;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: 36px;
+    margin-bottom: 36px;
 }
 
 .swiggy-text ul {
@@ -541,12 +541,12 @@ h1 {
     }
 
     .swiggy-description {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 
     .swiggy-text {
-        margin-top: 32px;
-        margin-bottom: 32px;
+        margin-top: 48px;
+        margin-bottom: 48px;
     }
 
     .swiggy-text + .swiggy-button {
@@ -576,6 +576,57 @@ h1 {
 
     .modal-link {
         font-size: 16px;
+    }
+
+    /* Common text styles */
+    p, li {
+        font-size: 16px;
+    }
+
+    /* Work page */
+    .intro-text p {
+        font-size: 16px;
+    }
+
+    /* Swiggy page */
+    .swiggy-description,
+    .swiggy-text li {
+        font-size: 16px;
+    }
+
+    /* Geek out page */
+    .swiggy-info p,
+    .swiggy-info ol li,
+    .info-text p,
+    .info-text li,
+    .info-text h2 {
+        font-size: 16px;
+    }
+
+    .swiggy-info .intro-text {
+        margin: 64px 0 24px;
+        font-size: 16px;
+    }
+
+    .info-image {
+        max-width: 400px;
+        margin: 32px auto;
+    }
+
+    .info-text {
+        margin-top: 48px;
+    }
+
+    .info-text h2 {
+        margin: 48px 0 24px;
+    }
+
+    .info-text ol {
+        margin-bottom: 48px;
+    }
+
+    .info-text li {
+        margin-bottom: 24px;
     }
 }
 
@@ -726,22 +777,6 @@ h1 {
     }
 }
 
-.news-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.news-links .swiggy-button {
-    flex: 1;
-    min-width: 240px;
-    max-width: 280px;
-}
-
 @media (min-width: 768px) {
     .news-links {
         gap: 16px;
@@ -864,5 +899,449 @@ h1 {
 
     .info-text li {
         margin-bottom: 24px;
+    }
+}
+
+/* Cool Projects section */
+.cool-projects {
+    margin: 36px 0;
+    text-align: center;
+    position: relative;
+}
+
+.cool-projects h2 {
+    font-size: 14px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.project-bubble {
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 0 auto 16px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #eee;
+}
+
+.project-bubble:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #F37E1B;
+}
+
+.project-bubble p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.project-bubble .emoji {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.project-bubble em {
+    font-style: italic;
+    color: #F37E1B;
+    font-weight: normal;
+}
+
+/* Project details expandable tray */
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    background-color: #f2f2f2;
+    border-radius: 16px;
+    margin: 0 auto 16px;
+    max-width: 90%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.project-details.active {
+    max-height: 2000px;
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 24px;
+    border-color: transparent;
+}
+
+/* Add a class to the trigger bubble when its tray is active */
+.project-trigger.active {
+    border-color: #F37E1B;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.details-content {
+    padding: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.details-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.details-content p:last-child {
+    margin-bottom: 0;
+}
+
+.details-content h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 24px 0 8px;
+    color: #F37E1B;
+}
+
+.details-content em {
+    font-style: italic;
+    color: #F37E1B;
+    font-weight: normal;
+}
+
+.close-details {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+    color: #777;
+    cursor: pointer;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.close-details:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.bottom-close {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.close-details-bottom {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    color: #777;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.close-details-bottom:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+    .cool-projects {
+        margin: 48px 0;
+    }
+    
+    .cool-projects h2 {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .project-bubble {
+        padding: 24px;
+        max-width: 80%;
+        border-radius: 20px;
+    }
+    
+    .project-bubble p {
+        font-size: 16px;
+    }
+    
+    .project-bubble .emoji {
+        font-size: 18px;
+    }
+    
+    .project-details {
+        max-width: 80%;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    
+    .details-content {
+        padding: 32px;
+    }
+    
+    .details-content p,
+    .details-content h3 {
+        font-size: 16px;
+    }
+    
+    .details-content h3 {
+        margin: 32px 0 12px;
+        color: #F37E1B;
+    }
+    
+    .close-details {
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .bottom-close {
+        margin-top: 32px;
+    }
+    
+    .close-details-bottom {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+}
+
+/* Learnings and Failures section */
+.learnings-section {
+    margin: 36px 0;
+    text-align: center;
+}
+
+.learnings-section h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.learning-item {
+    display: flex;
+    margin-bottom: 24px;
+    text-align: left;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.check-icon {
+    flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-right: 12px;
+    padding-top: 3px;
+}
+
+.learning-content {
+    flex-grow: 1;
+}
+
+.learning-content h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    color: #F37E1B;
+}
+
+.learning-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+}
+
+@media (min-width: 768px) {
+    .learnings-section {
+        margin: 48px 0;
+    }
+    
+    .learnings-section h2 {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .learning-item {
+        max-width: 80%;
+        margin-bottom: 32px;
+    }
+    
+    .check-icon {
+        font-size: 20px;
+        margin-right: 16px;
+    }
+    
+    .learning-content h3 {
+        font-size: 16px;
+        margin: 0 0 12px;
+    }
+    
+    .learning-content p {
+        font-size: 16px;
+    }
+}
+
+/* Add a new style to create consistent spacing */
+.swiggy-description + .swiggy-button {
+    margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+    .swiggy-description + .swiggy-button {
+        margin-bottom: 48px;
+    }
+}
+
+/* Media Links section */
+.media-section {
+    margin: 36px 0;
+    text-align: center;
+}
+
+.media-section h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* News links styles */
+.news-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.news-links .swiggy-button {
+    flex: 1;
+    min-width: 240px;
+    max-width: 280px;
+}
+
+@media (min-width: 768px) {
+    .media-section {
+        margin: 48px 0;
+    }
+    
+    .media-section h2 {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .news-links {
+        gap: 16px;
+        padding: 0;
+    }
+
+    .news-links .swiggy-button {
+        min-width: 260px;
+        max-width: 280px;
+    }
+}
+
+/* Mentors section */
+.mentors-section {
+    margin: 36px 0;
+    text-align: center;
+}
+
+.mentors-section h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.mentor-item {
+    display: flex;
+    margin-bottom: 16px;
+    text-align: left;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.mentor-icon {
+    flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-right: 12px;
+}
+
+.mentor-content {
+    flex-grow: 1;
+}
+
+.mentor-name {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+}
+
+.mentor-name a {
+    color: #F37E1B;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mentor-name a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .mentors-section {
+        margin: 48px 0;
+    }
+    
+    .mentors-section h2 {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .mentor-item {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .mentor-icon {
+        font-size: 20px;
+        margin-right: 16px;
+    }
+    
+    .mentor-name {
+        font-size: 16px;
     }
 } 
