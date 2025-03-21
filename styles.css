@@ -406,6 +406,22 @@ h1 {
     box-shadow: 0 8px 24px rgba(242, 206, 0, 0.15);
 }
 
+/* Color override specifically for Goodwater card */
+.work-card:nth-child(3) .work-description {
+    color: #003366;
+}
+
+.work-card:nth-child(3):hover .work-card-content {
+    border-color: #003366;
+    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.15);
+}
+
+/* Logo size adjustment for Goodwater */
+.work-card:nth-child(3) .company-logo {
+    width: 50px;
+    height: 50px;
+}
+
 @media (min-width: 768px) {
     .work-card-content {
         padding: 16px;
@@ -430,6 +446,12 @@ h1 {
     .work-card:nth-child(2) .company-logo {
         width: 38px;
         height: 38px;
+    }
+
+    /* Desktop logo size adjustment for Goodwater */
+    .work-card:nth-child(3) .company-logo {
+        width: 60px;
+        height: 60px;
     }
 
     .work-grid {
@@ -704,7 +726,7 @@ h1 {
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
+        width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
 }
@@ -1415,13 +1437,17 @@ h1 {
 
 /* Avanti page styles */
 .avanti-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 0;
-    max-width: 800px;
-    margin: 0 auto;
+}
+
+.avanti-content .swiggy-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: -4px;
 }
 
 /* Summary section for Avanti */
@@ -1675,5 +1701,212 @@ h1 {
     .image-caption {
         font-size: 12px;
         margin-top: 8px;
+    }
+}
+
+/* Goodwater content styles */
+.goodwater-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.goodwater-content .swiggy-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: -4px;
+}
+
+.goodwater-summary {
+    text-align: left;
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+.goodwater-content h2 {
+    font-size: 14px;
+    margin-bottom: 16px;
+    margin-top: 0;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.goodwater-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.goodwater-summary li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: #333;
+    position: relative;
+    padding-left: 24px;
+}
+
+.goodwater-summary li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.goodwater-summary li:last-child {
+    margin-bottom: 0;
+}
+
+.goodwater-summary strong {
+    font-weight: normal;
+    color: #003366;
+}
+
+.goodwater-content h3 {
+    color: #003366;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 24px 0 8px;
+}
+
+@media (min-width: 768px) {
+    .goodwater-content {
+        padding: 0;
+    }
+    
+    .goodwater-content .swiggy-logo {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .goodwater-summary {
+        margin-top: 36px;
+        margin-bottom: 36px;
+    }
+    
+    .goodwater-summary li {
+        font-size: 16px;
+        padding-left: 28px;
+    }
+    
+    .goodwater-summary li:before {
+        font-size: 20px;
+    }
+    
+    .goodwater-content h2 {
+        font-size: 16px;
+        margin-bottom: 24px;
+        margin-top: 0;
+    }
+    
+    .goodwater-content h3 {
+        font-size: 16px;
+        margin: 32px 0 12px;
+    }
+}
+
+.goodwater-content .project-details {
+    border-color: transparent;
+}
+
+.goodwater-content .project-trigger.active {
+    border-color: #003366;
+}
+
+.goodwater-content .project-bubble:hover {
+    border-color: #003366;
+    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.15);
+}
+
+.goodwater-content .close-details,
+.goodwater-content .close-details-bottom {
+    color: #003366;
+}
+
+.goodwater-content .project-bubble em {
+    font-style: italic;
+    color: #003366;
+    font-weight: normal;
+}
+
+.goodwater-content .details-content em {
+    font-style: italic;
+    color: #003366;
+    font-weight: normal;
+}
+
+/* Companies section */
+.companies-section {
+    width: 100%;
+    margin: 8px 0 36px;
+    text-align: center;
+}
+
+.companies-section h2 {
+    font-size: 14px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.company-logos {
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.company-logo-item {
+        width: 60px;
+        height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.company-app-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .companies-section {
+        margin: 12px 0 48px;
+    }
+    
+    .companies-section h2 {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .company-logos {
+        grid-template-columns: repeat(6, 72px);
+        gap: 20px;
+    }
+    
+    .company-logo-item {
+        width: 72px;
+        height: 72px;
+        border-radius: 14px;
+        padding: 6px;
     }
 } 
