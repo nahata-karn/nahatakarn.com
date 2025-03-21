@@ -422,6 +422,11 @@ h1 {
     height: 50px;
 }
 
+/* Ensure animation is applied to Goodwater card */
+.work-card:nth-child(3) .work-card-content {
+    animation: float 3s ease-in-out infinite;
+}
+
 @media (min-width: 768px) {
     .work-card-content {
         padding: 16px;
