@@ -1852,14 +1852,14 @@ h1 {
 /* Companies section */
 .companies-section {
     width: 100%;
-    margin: 8px 0 36px;
+    margin: 40px 0;
     text-align: center;
 }
 
 .companies-section h2 {
     font-size: 14px;
-    margin-bottom: 24px;
     font-weight: bold;
+    margin-bottom: 14px;
     color: #000;
     text-transform: uppercase;
 }
@@ -1877,20 +1877,94 @@ h1 {
         width: 60px;
         height: 60px;
     border-radius: 12px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.company-logo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.2);
+    border-color: #003366;
 }
 
 .company-app-logo {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     object-fit: contain;
-    border-radius: 8px;
+}
+
+/* Company details tray */
+.company-details-tray {
+    display: none;
+    position: relative;
+    background-color: #f2f2f2;
+    max-width: 90%;
+    margin: 0 auto 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    opacity: 0;
+    transform: translateY(-10px);
+    overflow: hidden;
+}
+
+.company-details-tray.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    margin-bottom: 24px;
+}
+
+.company-details-content {
+    padding: 0;
+    color: #333;
+    position: relative;
+    text-align: left;
+}
+
+.company-details-content h3 {
+    color: #003366;
+    margin-bottom: 12px;
+        font-size: 16px;
+    font-weight: bold;
+}
+
+.company-details-content p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.close-company-details {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    z-index: 2;
+    color: #777;
+}
+
+.close-company-details:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 @media (min-width: 768px) {
@@ -1900,7 +1974,7 @@ h1 {
     
     .companies-section h2 {
         font-size: 16px;
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
     
     .company-logos {
@@ -1911,7 +1985,146 @@ h1 {
     .company-logo-item {
         width: 72px;
         height: 72px;
-        border-radius: 14px;
-        padding: 6px;
+        border-radius: 16px;
+    }
+    
+    .company-details-tray {
+        max-width: 80%;
+        padding: 32px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    
+    .company-details-content h3 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    
+    .company-details-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .close-company-details {
+        top: 20px;
+        right: 20px;
+        width: 28px;
+        height: 28px;
+        font-size: 24px;
+    }
+}
+
+/* Learnings Section */
+.learnings-section {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.learnings-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.learning-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.learning-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.learning-content {
+    flex: 1;
+}
+
+.learning-text {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.learning-text strong {
+    font-weight: bold;
+}
+
+/* Mentor Section */
+.mentors-section {
+    margin: 36px 0;
+    text-align: center;
+}
+
+.mentors-section h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.mentor-item {
+    display: flex;
+    margin-bottom: 16px;
+    text-align: left;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.mentor-icon {
+    flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-right: 12px;
+}
+
+.mentor-content {
+    flex-grow: 1;
+}
+
+.mentor-name {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+}
+
+.mentor-name a {
+    color: #F37E1B;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mentor-name a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .mentors-section {
+        margin: 48px 0;
+    }
+    
+    .mentors-section h2 {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .mentor-item {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .mentor-icon {
+        font-size: 20px;
+        margin-right: 16px;
+    }
+    
+    .mentor-name {
+        font-size: 16px;
     }
 } 
