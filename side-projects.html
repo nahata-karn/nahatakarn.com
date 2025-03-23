@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Side Projects - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .side-projects-content {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .side-projects-content p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+        .news-preview {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .news-content {
+            width: calc(100% - 60px);
+            max-width: calc(100% - 60px);
+            overflow: hidden;
+        }
+        .news-headline {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        /* New project card styles */
+        .project-cards {
+            margin-top: 36px;
+            width: 100%;
+        }
+        
+        .project-card {
+            background-color: #f8f8f8;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(107, 70, 193, 0.15);
+        }
+        
+        .project-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .project-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        .project-note {
+            font-size: 12px;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 14px;
+        }
+        
+        .app-icon-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .app-icon-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(107, 70, 193, 0.2);
+        }
+        
+        .app-icon {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+        
+        .app-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        
+        .app-emoji {
+            font-size: 48px;
+            line-height: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 48px 16px;
+                overflow-x: hidden;
+            }
+            .project-card {
+                padding: 20px;
+            }
+            .app-icon-container {
+                width: 80px;
+                height: 80px;
+            }
+            .app-emoji {
+                font-size: 40px;
+            }
+            .project-title {
+                font-size: 16px;
+            }
+            .project-description {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="work.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+
+    <div class="container company-page">
+        <div class="side-projects-content">
+            <div class="company-logo-centered" style="font-size: 60px; margin-bottom: 8px;">🎮</div>
+            <div class="position-text">Side Projects</div>
+            
+            <p class="swiggy-description">I've always believed that the fastest way to learn something is to get in the arena and build. Ever since creating <a href="http://www.plio.in" target="_blank" style="color: #6B46C1; text-decoration: none;">Plio</a>, I realized how fulfilling it is to see an idea move from a visual in my head to a living product. AI has lowered the barrier to coding, so whenever I am consumed by an idea, I try to spin up a quick prototype. Here are some of my experiments:</p>
+            
+            <div class="project-cards">
+                <!-- Genie GPT Project -->
+                <div class="project-card">
+                    <a href="https://www.geniebot.in/" target="_blank" class="app-link">
+                        <div class="app-icon-container">
+                            <img src="images/side projects/geniegpt.webp" alt="Genie GPT" class="app-icon">
+                        </div>
+                    </a>
+                    <h3 class="project-title">GENIE GPT</h3>
+                    <p class="project-description">In early 2023, I built a simple web app at the time of GPT 4's release. It let you upload documents and generate a shareable link so others could chat with that text.</p>
+                    <p class="project-description">It was a scrappy forerunner to the <em>"context-aware agents"</em> now taking off. I strongly believe memory and context are crucial to unlocking AI's deeper potential. There's a massive difference between a general AI model and one that's specifically tuned to your personal or professional knowledge. If we can harness our proprietary context - think your personal notes - and feed it into AI, we unlock a new layer of economic opportunity.</p>
+                    <p class="project-description"><strong>Imagine each person monetizing their unique knowledge set through an agent fine tuned on their proprietary personal knowledge.</strong></p>
+                </div>
+                
+                <!-- Second Project - Rock Your MBA -->
+                <div class="project-card">
+                    <a href="https://rockurmba.com/" target="_blank" class="app-link">
+                        <div class="app-icon-container">
+                            <img src="images/side projects/rockurmba.png" alt="Rock Your MBA" class="app-icon">
+                        </div>
+                    </a>
+                    <h3 class="project-title">ROCK YOUR MBA</h3>
+                    <p class="project-description">In 2024 I built a voice-AI tool designed to help students prep for M7 business school interviews. I was blown away by the power of speech to text models and wanted to learn more. Talking out loud makes learning more fluid.</p>
+                    <p class="project-description">When you converse with AI in real time - like a practice partner that never tires - it's way more engaging.</p>
+                    <p class="project-description"><strong>Textbooks and text based LLMs are so passe :)</strong></p>
+                </div>
+                
+                <!-- Third Project -->
+                <div class="project-card">
+                    <a href="#" class="app-link">
+                        <div class="app-icon-container">
+                            <img src="images/side projects/youtube-learn.png" alt="YouTube Learn" class="app-icon">
+                        </div>
+                    </a>
+                    <h3 class="project-title">YOUTUBE-LEARN</h3>
+                    <p class="project-description">YouTube is my favorite product - hands down. It's the only marketplace I've seen that truly maximizes value for all participants: creators, consumers, brands, and the platform itself. It's also how billions of people, especially those in resource-strapped areas, learn new things.</p>
+                    <p class="project-description">But YouTube today is largely passive: click, watch, close. Inspired by my Plio days, I wanted to turn this browsing into active knowledge-building - let people talk to the video, take notes, build a knowledge graph of everything they watch.</p>
+                    <p class="project-description"><strong>I paused the project after NotebookLM launched video parsing, but one day I will get back to building the true co-pilot to YouTube.</strong></p>
+                </div>
+                
+                <!-- Fourth Project -->
+                <div class="project-card">
+                    <a href="https://sensai.hyperverge.org/" target="_blank" class="app-link">
+                        <div class="app-icon-container">
+                            <img src="images/side projects/sensai.png" alt="SensAI" class="app-icon">
+                        </div>
+                    </a>
+                    <h3 class="project-title">SENSAI</h3>
+                    <p class="project-description">In early 2023, I consulted for <a href="https://academy.hyperverge.org/" target="_blank" style="color: #6B46C1; text-decoration: none;">Hyperverge Academy</a> and helped <a href="https://www.linkedin.com/in/aman-dalmia/" target="_blank" style="color: #6B46C1; text-decoration: none;">Aman</a> and <a href="https://www.linkedin.com/in/gayathri-meka-04270666/" target="_blank" style="color: #6B46C1; text-decoration: none;">Gaytri</a> design SensAI - an AI powered coding tutor to help students train and land software dev jobs.</p>
+                    <p class="project-description"><strong>Today, they have taken SensAI and built it into an open-source platform that educators can adapt for personalized, AI-powered learning of any subject. Insanely proud of where they have taken this.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

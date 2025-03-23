@@ -427,6 +427,22 @@ h1 {
     animation: float 3s ease-in-out infinite;
 }
 
+/* Color override specifically for AI projects card */
+.work-card:nth-child(4) .work-description {
+    color: #6B46C1;
+}
+
+.work-card:nth-child(4):hover .work-card-content {
+    border-color: #6B46C1;
+    box-shadow: 0 8px 24px rgba(107, 70, 193, 0.15);
+}
+
+/* Ensure animation is applied to AI projects card */
+.work-card:nth-child(4) .work-card-content {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
 @media (min-width: 768px) {
     .work-card-content {
         padding: 16px;
@@ -1061,6 +1077,9 @@ h1 {
     visibility: hidden;
     position: relative;
     border: 2px solid transparent;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .project-details.active {
@@ -1081,6 +1100,8 @@ h1 {
     padding: 24px;
     position: relative;
     text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .details-content p {
@@ -1088,6 +1109,8 @@ h1 {
     line-height: 1.6;
     color: #333;
     margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .details-content p:last-child {
@@ -1446,6 +1469,25 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Style for centered emoji logo on side projects page */
+.company-logo-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .company-logo-centered {
+        width: 70px;
+        height: 70px;
+        font-size: 70px;
+    }
 }
 
 .avanti-content .swiggy-logo {
@@ -1817,6 +1859,14 @@ h1 {
         font-size: 16px;
         margin: 32px 0 12px;
     }
+    
+    .side-projects-content {
+        padding: 0;
+    }
+    
+    .side-projects-content .company-logo-centered {
+        font-size: 70px;
+    }
 }
 
 .goodwater-content .project-details {
@@ -2127,4 +2177,61 @@ h1 {
     .mentor-name {
         font-size: 16px;
     }
+}
+
+/* Side Projects content styles */
+.side-projects-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.side-projects-content .swiggy-text strong {
+    font-weight: normal;
+    color: #6B46C1;
+}
+
+.side-projects-content .project-bubble:hover,
+.side-projects-content .project-trigger.active {
+    border-color: #6B46C1;
+}
+
+.side-projects-content .details-content h3,
+.side-projects-content .details-content em,
+.side-projects-content .learning-content h3 {
+    color: #6B46C1;
+}
+
+.side-projects-content .project-bubble em {
+    font-style: italic;
+    color: #6B46C1;
+    font-weight: normal;
+}
+
+.side-projects-content .news-headline {
+    color: #000;
+}
+
+.side-projects-content .news-preview:hover,
+.side-projects-content a.swiggy-button:hover .news-preview {
+    border-color: #6B46C1;
+    box-shadow: 0 8px 24px rgba(107, 70, 193, 0.15);
+}
+
+.side-projects-content .swiggy-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: -4px;
+}
+
+.goodwater-content .swiggy-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: -4px;
 } 

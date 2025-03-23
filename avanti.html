@@ -8,6 +8,65 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .avanti-content {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .avanti-content li, 
+        .avanti-content p,
+        .project-bubble p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+        .news-preview {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .news-content {
+            width: calc(100% - 60px);
+            max-width: calc(100% - 60px);
+            overflow: hidden;
+        }
+        .news-headline {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 48px 16px;
+                overflow-x: hidden;
+            }
+            .avanti-summary {
+                width: 100%;
+                max-width: 100%;
+            }
+            .news-links {
+                width: 100%;
+                max-width: 100%;
+            }
+            .news-links .avanti-button,
+            .news-links .swiggy-button {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="work.html" class="back-arrow">
