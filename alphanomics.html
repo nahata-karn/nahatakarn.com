@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Alphanomics - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .alphanomics-content {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .alphanomics-content li, 
+        .alphanomics-content p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+        .news-preview {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .news-content {
+            width: calc(100% - 60px);
+            max-width: calc(100% - 60px);
+            overflow: hidden;
+        }
+        .news-headline {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 48px 16px;
+                overflow-x: hidden;
+            }
+            .alphanomics-summary {
+                width: 100%;
+                max-width: 100%;
+            }
+            .news-links {
+                width: 100%;
+                max-width: 100%;
+            }
+            .news-links .alphanomics-button,
+            .news-links .swiggy-button {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+        }
+        
+        /* Alphanomics-specific overrides */
+        .alphanomics-content .swiggy-text strong {
+            color: #006400;
+        }
+        
+        .alphanomics-content a.swiggy-button:hover .news-preview {
+            border-color: #006400;
+            box-shadow: 0 8px 24px rgba(0, 100, 0, 0.15);
+        }
+        
+        .alphanomics-button {
+            width: auto;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .alphanomics-button:hover .news-preview {
+            border-color: #006400;
+            box-shadow: 0 8px 24px rgba(0, 100, 0, 0.15);
+        }
+        
+        .alphanomics-summary {
+            text-align: left;
+            margin-top: 36px;
+            margin-bottom: 36px;
+        }
+        
+        .alphanomics-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .alphanomics-summary li {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #333;
+            position: relative;
+            padding-left: 24px;
+        }
+        
+        .alphanomics-summary li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .alphanomics-summary li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .alphanomics-summary strong {
+            font-weight: normal;
+            color: #006400;
+        }
+        
+        @media (min-width: 768px) {
+            .alphanomics-summary {
+                margin-top: 48px;
+                margin-bottom: 48px;
+            }
+            
+            .alphanomics-summary li {
+                font-size: 16px;
+                padding-left: 28px;
+            }
+            
+            .alphanomics-summary li:before {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="work.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+
+    <div class="container company-page">
+        <div class="alphanomics-content">
+            <div class="company-logo-centered" style="font-size: 60px; margin-bottom: 8px; color: #006400;">📈</div>
+            <div class="position-text" style="text-align: center; width: 100%;">Alphanomics in Emerging Economies</div>
+            
+            <p class="swiggy-description">In the fall of 2024, my Stanford classmate Arnav Mehta and I started working on a research project under Prof. <a href="https://x.com/HannoLustig" target="_blank" style="color: #006400; text-decoration: none;">Hanno Lustig</a> developing fundamental, value-based, mechanical trading strategies for Indian public equity markets. Our goal: systematically capture alpha - returns beyond what the general market delivers - by uncovering strong performers and exploiting market inefficiencies in an evolving, fast-growth economy.</p>
+            
+            <ul class="alphanomics-summary">
+                <li><strong style="color:#006400; font-weight: bold;">Our Hypothesis:</strong> Very simple. We believed India's public equity market was still inefficient (due to information asymmetry, limited analyst coverage, and delayed price discovery) enough to reward a systematic approach to stock selection. If we could spot fundamentally strong companies using basic public data, we could generate returns above the standard market benchmarks.</li>
+                <li><strong style="color:#006400; font-weight: bold;">Our Strategy:</strong> Without disclosing our exact formula, we used 10+ parameters - covering a company's size, growth potential, solvency profile, profitability, and overall valuation - to identify our picks.</li>
+                <li><strong style="color:#006400; font-weight: bold;">Backtesting:</strong> We pulled historical data from Capital IQ and Bloomberg, going back to 2004. Then we rigorously tested our strategy year by year to see if it held up in the real-world.</li>
+                <li><strong style="color:#006400; font-weight: bold;">Annual Rebalancing:</strong> We rebalanced our portfolio every year based on latest data and re-ran our strategy every year.</li>
+                <li><strong style="color:#006400; font-weight: bold;">Results:</strong> Our strategy produced a <strong>27%</strong> annualized CAGR (pre-tax), compared to the <strong>13%</strong> delivered by the broader market. <strong style="text-decoration: underline;">FWIW, $1M invested in 2004 would have grown to ~$120M using our model, vs ~$11M invested in the market index (NIFTY 50).</strong></li>
+            </ul>
+            
+            <div class="cool-projects" style="margin-top: 60px;">
+                <h2>RESULTS BREAKDOWN</h2>
+                
+                <div class="image-container" style="text-align: center; margin-bottom: 24px;">
+                    <img src="images/alpha/perf.png" alt="Performance Breakdown" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                </div>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: justify;">
+                    We looked at quarterly performance(maintaining an annual rebalancing approach). This allowed for more data points and a more granular assessment of return dispersion including alpha persistence over shorter time frames.
+                </p>
+                
+                <div class="image-container" style="text-align: center; margin-bottom: 40px;">
+                    <img src="images/alpha/res.png" alt="Results Analysis" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                </div>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: justify;">
+                    While our portfolio was expectedly more volatile, it maintained a higher Sharpe ratio (30.9% vs. 19.0%) - indicating superior risk-adjusted returns. Our portfolio outperformed the market in 63% of quarters and had an average of 47 invested companies per year.
+                </p>
+                
+                <div class="image-container" style="text-align: center; margin-bottom: 40px;">
+                    <img src="images/alpha/stats.png" alt="Portfolio Statistics" style="max-width: 50%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                </div>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: justify;">
+                    We also ran a regression comparing our portfolio's returns to the broader market to understand potential reasons for outperformance and durability of the strategy. R^2 of 24% suggests that while market factors explain a portion of the portfolio's returns, a substantial share remains independent of overall market movements. Essentially, returns are coming from company-specific alpha rather than broad beta exposure. However, this means volatility and timing become critical.
+                </p>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: justify;">
+                    A high t stat and low p value also suggest that the result is statistically significant and this is unlikely to be the result of random chance alone.
+                </p>
+            </div>
+            
+            <div class="cool-projects" style="margin-top: 60px;">
+                <h2>OUR STRATEGY ON OTHER EMERGING ECONOMIES</h2>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: justify;">
+                    To test the robustness of our strategy, we extended the analysis to Indonesia, Vietnam and Latin America (LATAM) - markets that share similar inefficiencies with India.
+                </p>
+                
+                <div class="image-container" style="text-align: center; margin-bottom: 40px; display: flex; justify-content: center; overflow: hidden;">
+                    <img src="images/alpha/otheree.png" alt="Performance in Other Emerging Economies" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                </div>
+                
+                <p style="font-size: 12px; line-height: 1.5; color: #666; margin-bottom: 40px; text-align: center; font-style: italic;">
+                    LATAM includes Mexico, Brazil, Colombia, Peru, and Argentina.
+                </p>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; text-align: justify;">
+                    Across all geographies the strategy beat local benchmarks, but for different reasons and with different levels of confidence.
+                </p>
+                
+                <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: justify;">
+                    India offered the biggest pool of companies (5,100+), yielding a well-diversified portfolio that consistently outperformed and showed the highest alpha not explained by market moves (R² just 24%). In contrast, other economies which offered much lower breadth of companies, saw an outperformance either driven by one-off idiosyncratic factors. For example most of the indonesian eyepopping alpha could be attribtuted to few quarters in 2021-22. Most of the Vietnam alpha could be attributed to one or two companies. While LatAM offered a middle the R² of 69% meant the strategy's gains were more tied to broader market trends.
+                </p>
+            </div>
+            
+            <div class="cool-projects" style="margin-top: 60px;">
+                <h2>THOUGHTS AND FUTURE PLANS</h2>
+                
+                <div style="margin-top: 30px;">
+                    <h3 style="color: #006400; font-size: 18px; margin-bottom: 15px;">A Lot of Room to Improve the Strategy</h3>
+                    <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 30px; text-align: justify;">
+                        Currently, we invest in every company that passes our initial set of screening parameters. In theory, if we could add an extra layer of fundamental research—enough to weed out the bottom decile of picks - our alpha could see a significant boost. Of course, pulling that off consistently is MUCH HARDER than it sounds.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 style="color: #006400; font-size: 18px; margin-bottom: 15px;">Survivorship Bias</h3>
+                    <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 30px; text-align: justify;">
+                        Our back-testing only includes companies that stayed listed over the past two decades. In reality, we might have ended up with some seemingly strong performers that delisted or went under. Without those data points, our historical results might be overstated compared to what would happen in an actual live portfolio.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 style="color: #006400; font-size: 18px; margin-bottom: 15px;">India offers a rare opportunity</h3>
+                    <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 30px; text-align: justify;">
+                        Among emerging economies, India stands out due to its scale, liquidity, and relatively stable market regulations. This combination is rare, and global trading firms are taking notice - Jane Street famously made $1B from India in 2024, and Citadel recently launched an India arm. There's clearly a growing recognition that India offers fertile ground for systematic strategies.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 style="color: #006400; font-size: 18px; margin-bottom: 15px;">Next Steps</h3>
+                    <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 30px; text-align: justify;">
+                        I plan to put real money into this strategy to see how it holds up in the wild—nothing compares to the crucible of actual market exposure. I also want to add a live ticker or dashboard on this site so the strategy's performance is fully transparent. COMING SOON!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
