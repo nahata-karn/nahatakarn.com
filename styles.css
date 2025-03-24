@@ -2234,4 +2234,17 @@ h1 {
     height: 120px;
     object-fit: contain;
     margin-bottom: -4px;
+}
+
+.work-card:nth-child(5) .work-description {
+    color: #006400;
+}
+
+.work-card:nth-child(5):hover .work-card-content {
+    border-color: #006400;
+    box-shadow: 0 8px 24px rgba(0, 100, 0, 0.15);
+}
+
+.work-card:nth-child(5) .company-logo {
+    color: #006400;
 } 
