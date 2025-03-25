@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Real Estate Investing - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .real-estate-logo {
+            font-size: 60px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        
+        .taught-by {
+            font-size: 13px;
+            font-weight: normal;
+            margin-bottom: 24px;
+            font-family: 'Space Mono', monospace;
+            color: #8C1515;
+            font-style: italic;
+            margin-top: -2px;
+        }
+        
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+        
+        /* Change project bubble hover to red */
+        .project-bubble:hover {
+            border-color: #8C1515 !important;
+            box-shadow: 0 4px 12px rgba(140, 21, 21, 0.15) !important;
+            cursor: pointer;
+        }
+        
+        .project-bubble.active {
+            border-color: #8C1515 !important;
+            box-shadow: 0 4px 12px rgba(140, 21, 21, 0.15) !important;
+        }
+        
+        /* Make headings Stanford maroon instead of orange */
+        .details-content h3 {
+            color: #8C1515;
+        }
+        
+        /* Add styles to prevent text wrapping in project bubbles */
+        .project-bubble p {
+            white-space: nowrap;
+        }
+        
+        .project-bubble {
+            min-width: 500px;
+        }
+        
+        /* Mobile styles to prevent zooming issues */
+        @media (max-width: 768px) {
+            .project-bubble {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .project-bubble p {
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+            }
+        }
+        
+        /* Simpler list styling */
+        .details-content ol, .details-content ul {
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+        
+        .details-content ol li, .details-content ul li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            line-height: 1.4;
+        }
+        
+        /* Add more padding to the details content */
+        .details-content {
+            padding: 25px 30px;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="stanford.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+
+    <div class="container company-page">
+        <div class="swiggy-content">
+            <div class="real-estate-logo">🏘️</div>
+            <h1>Real Estate Investing</h1>
+            <div class="taught-by">by Doug Abbey and Chris Mahowald</div>
+            
+            <p class="swiggy-description">Understanding of the fundamentals of commercial real estate investment</p>
+            
+            <ul class="swiggy-text">
+                <li><strong style="color: #8C1515;">One of the Most Fun Classes at the GSB:</strong> Going in, I had zero real estate experience and didn't quite know what to expect. But it quickly became a highlight.</li>
+                
+                <li><strong style="color: #8C1515;">Focused on Commercial Real Estate:</strong> We honed in on everything from industrial warehouses to office towers - dissecting what actually drives value in each segment.</li>
+                
+                <li><strong style="color: #8C1515;">Core concepts:</strong> Land economics, market/locality analysis, investment analysis, investment vehicles, real estate risk, and pitching to a RE IC. Major land uses discussed - apartment complexs, retail, office, and industrial.</li>
+                
+                <li><strong style="color: #8C1515;">A Balance of Art and Science:</strong> While property deals often hinge on relationships, gut feel, and market forces, there are also clear frameworks and metrics that help you evaluate an opportunity more objectively. I left feeling a lot more prepared to spot good deals—and negotiate an office lease, should the need arise.</li>
+                
+                <li><strong style="color: #8C1515;">Incredible Guest Speakers:</strong> We heard from the real estate arms of KKR and Blackstone, major developers in Russia, leaders at Tishman Speyer, Prologis' current CEO, plus some intriguing real-estate-tech founders. Each visitor brought a unique angle on how deals get done in this massive industry.</li>
+                
+                <li>While I am in process of digitzing my class notes, here are some of my writings:</li>
+            </ul>
+            
+            <div class="cool-projects" style="margin-top: 0;">
+                <div class="project-bubble" id="project-trigger-1">
+                    <p><span class="emoji">💡</span> <strong style="color: #8C1515;">Hittin' The Pavement</strong> <span style="font-size: 12px;">↗</span></p>
+                </div>
+                
+                <div class="project-details" id="project-details-1" style="display: none;">
+                    <!-- Content removed as it's now in Google Docs -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectTrigger1 = document.getElementById('project-trigger-1');
+            const projectDetails1 = document.getElementById('project-details-1');
+            const closeButtons = document.querySelectorAll('.close-details');
+            const closeBottomButtons = document.querySelectorAll('.close-details-bottom');
+            
+            projectTrigger1.addEventListener('click', function() {
+                // Open the Google Doc link instead of toggling the panel
+                window.open('https://docs.google.com/document/d/17_oNRMxEmQDmtpb4-lWHNtd4YUKAAlDciIDSS4j2pS4/edit?usp=sharing', '_blank');
+            });
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const panel = this.closest('.project-details');
+                    panel.classList.remove('active');
+                });
+            });
+            
+            closeBottomButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const panel = this.closest('.project-details');
+                    panel.classList.remove('active');
+                });
+            });
+        });
+    </script>
+    
+    <footer class="footer">
+        <div class="socials">
+            <a href="mailto:karn@stanford.edu" class="social-link">
+                <span class="social-icon">✉️</span>karn@stanford.edu
+            </a>
+            <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
+                <span class="social-icon">𝕏</span>bluebrd003
+            </a>
+            <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
+                <span class="social-icon">🔗</span>LinkedIn
+            </a>
+        </div>
+    </footer>
+</body>
+</html> 

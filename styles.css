@@ -90,6 +90,95 @@ h1 {
     gap: 16px;
 }
 
+/* Retro Button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.retro-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border: 2px solid #000;
+    border-radius: 4px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 4px 4px 0px #000;
+    transition: all 0.2s ease;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.retro-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+.retro-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+}
+
+.text-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    text-align: left;
+    padding-left: 0;
+}
+
+.text-wrapper span {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.retro-button .button-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .retro-button {
+        font-size: 16px;
+        width: 350px;
+        height: 60px;
+    }
+    
+    .retro-button .button-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .icon-container {
+        width: 80px;
+    }
+}
+
 .separator-line {
     flex: 1;
     height: 1px;
@@ -181,10 +270,16 @@ h1 {
 
 /* Content styles */
 .content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    text-align: left;
-    padding: 0 16px;
+    padding: 20px;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
 .content p {
@@ -1729,7 +1824,15 @@ h1 {
 .image-container {
     text-align: center;
     margin: 20px auto 32px;
-    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.full-width-image {
+    border-radius: 8px;
+    margin: 0;
+    display: block;
 }
 
 .image-caption {
@@ -1916,7 +2019,7 @@ h1 {
 
 .company-logos {
     display: grid;
-    grid-template-columns: repeat(6, 60px);
+    grid-template-columns: repeat(3, 60px);
     justify-content: center;
     gap: 16px;
     margin: 0 auto;
@@ -1971,6 +2074,7 @@ h1 {
     display: block;
     opacity: 1;
     transform: translateY(0);
+    margin-top: 20px;
     margin-bottom: 24px;
 }
 

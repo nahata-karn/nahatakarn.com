@@ -8,27 +8,138 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* Override ALL hover effects to Stanford maroon */
+        .stanford-card .work-description {
+            color: black !important; /* Default color for description */
+        }
+        
+        .stanford-card:hover .work-card-content {
+            border-color: #8C1515 !important;
+            box-shadow: 0 8px 24px rgba(140, 21, 21, 0.15) !important;
+        }
+        
+        .stanford-card:hover .work-description {
+            color: #8C1515 !important;
+        }
+        
+        /* Override any specific nth-child selectors */
+        .stanford-card:nth-child(1):hover .work-card-content,
+        .stanford-card:nth-child(2):hover .work-card-content,
+        .stanford-card:nth-child(3):hover .work-card-content,
+        .stanford-card:nth-child(4):hover .work-card-content,
+        .stanford-card:nth-child(5):hover .work-card-content {
+            border-color: #8C1515 !important;
+            box-shadow: 0 8px 24px rgba(140, 21, 21, 0.15) !important;
+        }
+        
+        .stanford-card:nth-child(1):hover .work-description,
+        .stanford-card:nth-child(2):hover .work-description,
+        .stanford-card:nth-child(3):hover .work-description,
+        .stanford-card:nth-child(4):hover .work-description,
+        .stanford-card:nth-child(5):hover .work-description {
+            color: #8C1515 !important;
+        }
+        
+        /* Mobile styling for Stanford image */
+        @media (max-width: 768px) {
+            .full-width-image {
+                max-width: 70% !important;
+            }
+        }
+    </style>
 </head>
 <body>
+    <a href="index.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+
     <div class="container">
         <header>
             <h1>Stanford</h1>
-            <a href="index.html" class="back-button">Back to Home</a>
         </header>
-    </div>
-    
-    <footer class="footer">
-        <div class="socials">
-            <a href="mailto:karn@stanford.edu" class="social-link">
-                <span class="social-icon">✉️</span>karn@stanford.edu
-            </a>
-            <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
-                <span class="social-icon">𝕏</span>bluebrd003
-            </a>
-            <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
-                <span class="social-icon">🔗</span>LinkedIn
-            </a>
+
+        <div class="content">
+            <div class="image-container" style="margin-top: 0;">
+                <img src="images/stanford/stan.jpg" alt="Stanford Campus" class="full-width-image" style="max-width: 35%;">
+            </div>
+
+            <div class="intro-text" style="margin-bottom: 0; text-align: left;">
+                <p>
+                    Coming to Stanford in 2023 for the MBA program has been the opportunity of a lifetime. There were two moments in my childhood when I knew I wanted to come here: first, when I read about Stanford's "<em><a href="https://poetsandquants.com/2024/05/23/why-everyone-should-answer-stanford-gsbs-iconic-essay/" target="_blank" style="color: #8C1515; text-decoration: none;">What Matters Most to You and Why?</a></em>" essay (which I spent over ten years thinking about before I applied), and second, when I read Phil Knight's (Stanford GSB Alum) <em>Shoe Dog</em>.
+                </p>
+
+                <p>
+                    I'm enormously grateful for the chance to be a student at Stanford. It has broadened my horizons, introduced me to professors who are absolute legends as both thinkers and human beings, and surrounded me with friends and peers who challenge me, push me, and make me laugh :)
+                </p>
+
+                <p>
+                    This section is <u>still a work in progress</u>, but I plan to share all my notes here from classes and talks. I'm currently converting my handwritten notes to digital form. In the meantime, here are some of my favorite classes so far:
+                </p>
+            </div>
+            
+            <div class="work-grid" style="margin-top: 48px;">
+                <a href="pmf.html" class="work-card stanford-card">
+                    <div class="work-card-content">
+                        <div class="logo-container">
+                            <div class="company-logo" style="display: flex; justify-content: center; align-items: center; font-size: 28px;">🚀</div>
+                        </div>
+                        <div class="text-container">
+                            <p class="work-description"><strong style="color: black;">Product Market Fit</strong> - <em style="color: #8C1515;">taught by Co-Founder of Benchmark Capital & Wealthfront</em></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="real-estate.html" class="work-card stanford-card">
+                    <div class="work-card-content">
+                        <div class="logo-container">
+                            <div class="company-logo" style="display: flex; justify-content: center; align-items: center; font-size: 28px;">🏢</div>
+                        </div>
+                        <div class="text-container">
+                            <p class="work-description"><strong style="color: black;">Real Estate Investing</strong> - <em style="color: #8C1515;">taught by Co-Founder of Prologis ($120B Real Estate Co.)</em></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="work-card stanford-card">
+                    <div class="work-card-content">
+                        <div class="logo-container">
+                            <div class="company-logo" style="display: flex; justify-content: center; align-items: center; font-size: 28px;">💼</div>
+                        </div>
+                        <div class="text-container">
+                            <p class="work-description"><strong style="color: black;">Is This a Good Business</strong> - <em style="color: #8C1515;">taught by MDs of TA Associates ($45 PE Fund)</em></p>
+                            <span style="position: absolute; bottom: 8px; right: 12px; font-size: 10px; background-color: #8C1515; color: white; padding: 2px 5px; border-radius: 3px;">WIP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-card stanford-card">
+                    <div class="work-card-content">
+                        <div class="logo-container">
+                            <div class="company-logo" style="display: flex; justify-content: center; align-items: center; font-size: 28px;">✍️</div>
+                        </div>
+                        <div class="text-container">
+                            <p class="work-description"><strong style="color: black;">Winning Writing</strong> - <em style="color: #8C1515;">taught by ex-comms directors for Elon Musk at Tesla</em></p>
+                            <span style="position: absolute; bottom: 8px; right: 12px; font-size: 10px; background-color: #8C1515; color: white; padding: 2px 5px; border-radius: 3px;">WIP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <footer class="footer">
+            <div class="socials">
+                <a href="mailto:karn@stanford.edu" class="social-link">
+                    <span class="social-icon">✉️</span>karn@stanford.edu
+                </a>
+                <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
+                    <span class="social-icon">𝕏</span>bluebrd003
+                </a>
+                <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
+                    <span class="social-icon">🔗</span>LinkedIn
+                </a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html> 

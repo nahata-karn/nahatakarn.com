@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Product Market Fit - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .pmf-logo {
+            font-size: 60px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        
+        .taught-by {
+            font-size: 13px;
+            font-weight: normal;
+            margin-bottom: 24px;
+            font-family: 'Space Mono', monospace;
+            color: #8C1515;
+            font-style: italic;
+            margin-top: -2px;
+        }
+        
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+        
+        .quotes-section {
+            margin: 48px 0;
+        }
+        
+        .quote-item {
+            display: flex;
+            margin-bottom: 24px;
+            padding: 16px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .quote-mark {
+            font-size: 36px;
+            color: #8C1515;
+            margin-right: 12px;
+            line-height: 1;
+        }
+        
+        .quote-content {
+            flex: 1;
+        }
+        
+        .quote-content p {
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Change project bubble hover to red */
+        .project-bubble:hover {
+            border-color: #8C1515 !important;
+            box-shadow: 0 4px 12px rgba(140, 21, 21, 0.15) !important;
+            cursor: pointer;
+        }
+        
+        .project-bubble.active {
+            border-color: #8C1515 !important;
+            box-shadow: 0 4px 12px rgba(140, 21, 21, 0.15) !important;
+        }
+        
+        /* Make headings Stanford maroon instead of orange */
+        .details-content h3 {
+            color: #8C1515;
+        }
+        
+        /* Simpler list styling */
+        .details-content ol {
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+        
+        .details-content ol li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            line-height: 1.4;
+        }
+        
+        /* Add more padding to the details content */
+        .details-content {
+            padding: 25px 30px;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="stanford.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+
+    <div class="container company-page">
+        <div class="swiggy-content">
+            <div class="pmf-logo">🚀</div>
+            <h1>Product Market Fit</h1>
+            <div class="taught-by">by Andy Rachleff</div>
+            
+            <p class="swiggy-description">What truly determines whether a startup can succeed? How do you increase your chances of finding Product Market Fit?</p>
+            
+            <ul class="swiggy-text">
+                <li>Taught by <strong style="color: #8C1515;">Andy Rachleff</strong>, founder of <strong style="color: #8C1515;">Benchmark Capital</strong> (one of the best VC firms ever, investors in eBay, Juniper, Uber, Twitter, Snap, Instagram) and <strong style="color: #8C1515;">Wealthfront</strong> (a $5B+ company).</li>
+                
+                <li>My <strong style="color: #8C1515;">favourite class at Stanford</strong>. Andy is a legend. Benchmark Capital is a storied VC firm, and Wealthfront is massive, so it was incredible to learn directly from him.</li>
+                
+                <li>Core Premise: The success of a startup - or even a large company launching a new product - depends most on <strong style="color: #8C1515;">finding a market that is desperate for its product</strong>. Focusing on product/market fit often conflicts with the conventional view that a startup's limited resources should be spent perfecting day-to-day execution. Interestingly, almost every successful product-driven tech company <strong style="color: #8C1515;">"found" its product/market fit accidentally</strong>. This course tries to define the consistent (yet highly counterintuitive) process they all actually followed - and how to apply it in different situations.</li>
+                
+                <li>While many of the lessons can be adapted, the <strong style="color: #8C1515;">core framework is especially relevant for software technology</strong> (both B2B and B2C) companies.</li>
+                
+                <li><strong style="color: #8C1515;">Only 25 people</strong> get to take this class every year. I was lucky enough to be one of those students!</li>
+                
+                <li>Over <strong style="color: #8C1515;">two decades of teaching</strong>, Andy has gathered insights from seeing the best companies and founders, then distilled those lessons into this course.</li>
+                
+                <li>Andy holds <strong style="color: #8C1515;">strong opinions</strong> and isn't shy about taking a stance. There's almost no gray area - just clarity. The class is seminar style, with a <strong style="color: #8C1515;">TON of assigned readings</strong>, leading to intense discussions facilitated by Andy.</li>
+                
+                <li>One of the biggest gifts from this class is that Andy really <strong style="color: #8C1515;">invests in his students and stays a friend and mentor for life</strong>. I was lucky to spend some 1:1 time with him outside of class, learning how he thinks and lives.</li>
+                
+                <li>Assigned Readings:
+                    <ul style="list-style-type: disc; margin-left: 20px; margin-top: 8px;">
+                        <li>The Lean Startup</li>
+                        <li>Crossing the Chasm</li>
+                        <li>The Innovator's Dilemma</li>
+                        <li>The Innovator's Solution</li>
+                        <li>The Four Steps to the Epiphany</li>
+                        <li>Some of Howard Marks' writings</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    Class notes coming very soon! But here are some of my writings from the class:
+                </li>
+            </ul>
+            
+            <div class="cool-projects" style="margin-top: 0;">
+                <div class="project-bubble" id="project-trigger-1">
+                    <p><span class="emoji">💡</span> <strong style="color: #8C1515;">My Own Product Development Process</strong> <span style="font-size: 12px;">↗</span></p>
+                </div>
+                
+                <div class="project-details" id="project-details-1" style="display: none;">
+                    <!-- Content removed as it's now in Google Docs -->
+                </div>
+                
+                <div class="project-bubble project-trigger" id="project-trigger-3">
+                    <p><span class="emoji">📋</span> <strong style="color: #8C1515;">Andy's Key Takeaways</strong></p>
+                </div>
+                
+                <div class="project-details" id="project-details-3">
+                    <div class="details-content">
+                        <span class="close-details">&times;</span>
+                        
+                        <ol>
+                            <li>Everyone shouldn't like your idea</li>
+                            <li>Appealing to everyone appeals to no one</li>
+                            <li>Without change there is seldom opportunity</li>
+                            <li>Authenticity is required to recognize inflections points early</li>
+                            <li>The only thing that matters is finding desperate customers</li>
+                            <li>Bootstrap ideas that solve your own problems</li>
+                            <li>To get big you have to start small</li>
+                            <li>All the value lies in the surprises</li>
+                            <li>Pivot on the who and how, restart on the what</li>
+                            <li>Double down on the good, don't fix the bad</li>
+                            <li>Fail fast & cheap</li>
+                            <li>Stealth doesn't matter</li>
+                            <li>Revenue is more valuable as a signal then a source of cash</li>
+                            <li>It's not first to market, but first to product/market fit</li>
+                            <li>Don't pursue growth until you confirm your value hypothesis</li>
+                            <li>Brand building is irrelevant for tech startups</li>
+                            <li>Having more than one benefit is a negative</li>
+                            <li>Market research is of little value</li>
+                            <li>Each adjacent market requires its own whole product</li>
+                            <li>Succeed with an application before you pursue a platform</li>
+                            <li>Disruption is a business model concept, not a technology concept</li>
+                            <li>Markets represent buyers who reference one another</li>
+                            <li>Don't pay attention to your competition</li>
+                            <li>Corporate partners impede discovering product/market fit</li>
+                            <li>Disruption is relative</li>
+                            <li>Don't hit the accelerator until you are successful</li>
+                            <li>Don't judge decisions by their outcomes</li>
+                            <li>Built to learn is preferable to built to execute</li>
+                            <li>You only find the answer if you make someone uncomfortable</li>
+                            <li>Formal experiments are only good for growth hypotheses</li>
+                            <li>Great ideas find you not the other way around</li>
+                            <li>Only sell your company if your market ain't happening or if you get a ridiculous offer</li>
+                            <li>Need is irrelevant, only desperation matters</li>
+                        </ol>
+                        
+                        <div class="bottom-close">
+                            <button class="close-details-bottom">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectTrigger1 = document.getElementById('project-trigger-1');
+            const projectDetails1 = document.getElementById('project-details-1');
+            const projectTrigger3 = document.getElementById('project-trigger-3');
+            const projectDetails3 = document.getElementById('project-details-3');
+            const closeButtons = document.querySelectorAll('.close-details');
+            const closeBottomButtons = document.querySelectorAll('.close-details-bottom');
+            
+            projectTrigger1.addEventListener('click', function() {
+                // Open the Google Doc link instead of toggling the panel
+                window.open('https://docs.google.com/document/d/1v3XPjMPMxsM2h9tiSYKms-RpMEXbGKjUrAtv0-dwFf8/edit?usp=sharing', '_blank');
+            });
+            
+            projectTrigger3.addEventListener('click', function() {
+                // Toggle this panel
+                projectDetails3.classList.toggle('active');
+                projectTrigger3.classList.toggle('active');
+            });
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const panel = this.closest('.project-details');
+                    panel.classList.remove('active');
+                    
+                    // Find the corresponding trigger and remove its active class
+                    if (panel.id === 'project-details-3') {
+                        projectTrigger3.classList.remove('active');
+                    }
+                });
+            });
+            
+            closeBottomButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const panel = this.closest('.project-details');
+                    panel.classList.remove('active');
+                    
+                    // Find the corresponding trigger and remove its active class
+                    if (panel.id === 'project-details-3') {
+                        projectTrigger3.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <footer class="footer">
+        <div class="socials">
+            <a href="mailto:karn@stanford.edu" class="social-link">
+                <span class="social-icon">✉️</span>karn@stanford.edu
+            </a>
+            <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
+                <span class="social-icon">𝕏</span>bluebrd003
+            </a>
+            <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
+                <span class="social-icon">🔗</span>LinkedIn
+            </a>
+        </div>
+    </footer>
+</body>
+</html> 
