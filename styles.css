@@ -284,6 +284,8 @@ h1 {
     width: 16px;
     height: 16px;
     object-fit: contain;
+    display: block;
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -302,9 +304,8 @@ h1 {
         height: 36px;
     }
     
-    .home-icon {
-        width: 18px;
-        height: 18px;
+    .home-button span {
+        font-size: 18px !important;
     }
 }
 
