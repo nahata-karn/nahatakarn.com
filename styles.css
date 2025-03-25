@@ -258,6 +258,34 @@ h1 {
     transform: scale(1.05);
 }
 
+/* Home button */
+.home-button {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    z-index: 10;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-button:hover {
+    transform: scale(1.05);
+}
+
+.home-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
 @media (min-width: 768px) {
     .back-arrow {
         top: 32px;
@@ -265,6 +293,18 @@ h1 {
         width: 36px;
         height: 36px;
         font-size: 18px;
+    }
+    
+    .home-button {
+        top: 32px;
+        right: 32px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .home-icon {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -425,15 +465,18 @@ h1 {
 
 .work-card-content {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 0px #000;
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    border: 2px solid #eee;
-    transition: all 0.3s ease;
-    animation: float 3s ease-in-out infinite;
+    border: 2px solid #000;
+    transition: all 0.2s ease;
+    position: relative;
+    top: 0;
+    left: 0;
+    animation: none;
 }
 
 @keyframes float {
@@ -449,8 +492,13 @@ h1 {
 }
 
 .work-card:hover .work-card-content {
-    border-color: #F37E1B;
-    box-shadow: 0 8px 24px rgba(243, 126, 27, 0.15);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+.work-card:active .work-card-content {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
 }
 
 .logo-container {
@@ -483,6 +531,7 @@ h1 {
     color: #F37E1B;
     text-align: left;
     margin: 0;
+    font-weight: bold;
 }
 
 /* Logo size adjustment for Avanti */
@@ -497,8 +546,8 @@ h1 {
 }
 
 .work-card:nth-child(2):hover .work-card-content {
-    border-color: #F2CE00;
-    box-shadow: 0 8px 24px rgba(242, 206, 0, 0.15);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
 }
 
 /* Color override specifically for Goodwater card */
@@ -507,8 +556,8 @@ h1 {
 }
 
 .work-card:nth-child(3):hover .work-card-content {
-    border-color: #003366;
-    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.15);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
 }
 
 /* Logo size adjustment for Goodwater */
@@ -519,7 +568,7 @@ h1 {
 
 /* Ensure animation is applied to Goodwater card */
 .work-card:nth-child(3) .work-card-content {
-    animation: float 3s ease-in-out infinite;
+    animation: none;
 }
 
 /* Color override specifically for AI projects card */
@@ -528,20 +577,30 @@ h1 {
 }
 
 .work-card:nth-child(4):hover .work-card-content {
-    border-color: #6B46C1;
-    box-shadow: 0 8px 24px rgba(107, 70, 193, 0.15);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
 }
 
 /* Ensure animation is applied to AI projects card */
 .work-card:nth-child(4) .work-card-content {
-    animation: float 3s ease-in-out infinite;
-    animation-delay: 0.5s;
+    animation: none;
 }
 
 @media (min-width: 768px) {
     .work-card-content {
         padding: 16px;
         gap: 16px;
+        box-shadow: 5px 5px 0px #000;
+    }
+    
+    .work-card:hover .work-card-content {
+        transform: translate(3px, 3px);
+        box-shadow: 2px 2px 0px #000;
+    }
+    
+    .work-card:nth-child(5):hover .work-card-content {
+        transform: translate(3px, 3px);
+        box-shadow: 2px 2px 0px #000;
     }
     
     .logo-container {
@@ -2345,8 +2404,8 @@ h1 {
 }
 
 .work-card:nth-child(5):hover .work-card-content {
-    border-color: #006400;
-    box-shadow: 0 8px 24px rgba(0, 100, 0, 0.15);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
 }
 
 .work-card:nth-child(5) .company-logo {
