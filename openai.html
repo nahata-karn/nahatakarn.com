@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Breaking down Open AI's Consumer PnL + Potential ARPU Expansion - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .openai-content {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .openai-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .openai-header h1 {
+            font-size: 28px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .openai-header .author {
+            font-style: italic;
+            margin: 15px 0;
+            display: block;
+        }
+        .description {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 14px;
+            color: #003366;
+        }
+        .section {
+            margin: 40px 0;
+            text-align: left;
+        }
+        .section h2 {
+            font-size: 19px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-weight: 700;
+        }
+        .tweet-image {
+            max-width: 50%;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #e0e0e0;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+            border-radius: 4px;
+        }
+        .section-content {
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        .bullet-point {
+            margin: 20px 0;
+            padding-left: 0;
+            position: relative;
+        }
+        .bullet {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .bullet-title {
+            font-weight: bold;
+            font-size: 16px;
+            display: inline;
+        }
+        .sheet-button {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            border: 2px solid #000;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 4px 4px 0px #000;
+            transition: all 0.2s ease;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .sheet-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
+        .sheet-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000;
+        }
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        @media (min-width: 768px) {
+            .container.company-page {
+                max-width: 72%;
+                padding: 38px 19px;
+            }
+            .openai-header h1 {
+                font-size: 36px;
+            }
+            .description {
+                font-size: 16px;
+                max-width: 100%;
+            }
+            .section h2 {
+                font-size: 22px;
+            }
+            .section-content {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button" target="_blank">
+        <span style="font-size: 16px;">🏠</span>
+    </a>
+
+    <div class="container company-page">
+        <div class="openai-content">
+            <div class="openai-header">
+                <h1>Breaking down Open AI's Consumer PnL + Potential ARPU Expansion</h1>
+                <span class="author">By Karn Nahata</span>
+            </div>
+            
+            <div class="description">
+                <p style="margin-bottom: 1.5em;">
+                    <strong>TLDR:</strong> <span style="font-family: 'Space Mono', monospace;">OpenAI is my dream company - I genuinely believe I could do my life's best work here. To illustrate the value I can bring to the Special Projects role, I have designed a pricing experiment for the Consumer segment that I would be excited to lead to drive better unit economics for the consumer PnL.</span>
+                </p>
+                
+                <p style="margin-bottom: 0.5em;"><strong>SECTIONS:</strong></p>
+                
+                <ol style="color: #003366; list-style-position: inside; padding-left: 20px; font-family: 'Space Mono', monospace;">
+                    <li style="margin-bottom: 15px;">
+                        <a href="#section1" style="color: #003366; text-decoration: underline; font-family: 'Space Mono', monospace;">What Sam's Tweet Hinted</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="#section2" style="color: #003366; text-decoration: underline; font-family: 'Space Mono', monospace;">Consumer PnL - Strategic View</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="#section3" style="color: #003366; text-decoration: underline; font-family: 'Space Mono', monospace;">What do users want?</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="#section4" style="color: #003366; text-decoration: underline; font-family: 'Space Mono', monospace;">Experiment construct</a>
+                    </li>
+                </ol>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <p>---X---</p>
+                </div>
+            </div>
+            
+            <div class="section" id="section1">
+                <h2>1. What Sam's tweet hinted</h2>
+                
+                <img src="openai/sam.png" alt="Sam Altman Tweet" class="tweet-image">
+                
+                <div class="section-content">
+                    <p>When Sam Altman proposed converting the current $20/month plan into a credit based pricing system it highlighted two critical points:</p>
+                    
+                    <div class="bullet-point">
+                        <span class="bullet">•</span>
+                        <strong class="bullet-title">Monthly subscription =! Perceived value.</strong>
+                        <p>Most good subscription businesses struggle to fully capture the perceived value of their product from each user segment, since a single price often oversimplifies diverse usage patterns. A credit-based system makes complete economic sense - ties price more directly to actual consumption. Heavy users who derive more value pay proportionally more, while lighter users aren't overcharged.</p>
+                    </div>
+                    
+                    <div class="bullet-point">
+                        <span class="bullet">•</span>
+                        <strong class="bullet-title">Higher margins = Lower cash burn</strong>
+                        <p>This combined with the fact that OpenAI is reportedly burning $5B in cash (driven largely by compute and research expenses), shifting toward a credit-based model can help up those contribution margins and reduce some of the burn.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <img src="openai/market.png" alt="Market Data" class="tweet-image">
+                <div class="section-content">
+                    <p>Together, these signals suggest that a flat fee alone is most likely suboptimal, and that a dynamic, usage-based component could help OpenAI strategically better match revenue with actual compute consumption.</p>
+                </div>
+            </div>
+            
+            <div class="section" id="section2">
+                <h2>2. Breaking down the OpenAI Consumer PnL</h2>
+                
+                <div class="section-content">
+                    <p>Before designing any pricing experiment, I believe it's important to understand the PnL and unit economics at a granular level.</p>
+                    <br>
+                    <p><strong>WHY?</strong> My experience leading Strategy at Swiggy (India's DoorDash) taught me that a PnL is like a clue sheet - if you read it correctly, it reveals not just what's happening, but why. Presenting that story in the right way to the rest of the organization anchors everyone to the same goals and priorities.</p>
+                    <br>
+                    <p>OpenAI has three business lines - Consumer, Enterprise, and API. CFO Sarah Friar recently mentioned publicly that the Consumer segment accounts for about 75% of overall revenue. So I decided to narrow in on the <strong><em>Monthly Consumer PnL</em></strong> and examine the Consumer unit economics to create a view on which levers most impact revenue and margin, and ultimately design the most potent experiment.</p>
+                    
+                    <div class="button-container">
+                        <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank" class="sheet-button">
+                            Check Working Sheet Here
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                    <img src="openai/pnl.png" alt="OpenAI Consumer PnL" class="tweet-image" style="max-width: 80%;">
+                </a>
+                
+                <div class="section-content">
+                    <p>At a high level I began by segmenting the PnL across the three different consumer tiers - Free, Plus, and Pro - each with distinct usage patterns and price points. To keep it simple and focussed on levers that we will be controlling through our experiment, I have not included Microsoft's revenue share and CapEx allocation.</p>
+                    
+                    <br>
+                    <p><strong>TAKEAWAYS:</strong></p>
+                    
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span><strong>Plus users are the economic engine:</strong> it represents only 5% of users yet delivers the lion's share of contribution margin.</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>The Free tier, while huge in numbers, runs at a <strong>small negative margin (-$3.2M)</strong>, effectively acting as a top-of-funnel loss leader.</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Pro, meanwhile, posts <strong>near-breakeven margin (-$0.4M) despite its much higher subscription fee</strong> - highlighting that heavier usage at the Pro level quickly offsets incremental revenue.</span>
+                        </li>
+                    </ul>
+                    
+                    <p>I also calculated how each model profitability looks across different subscription tiers. By isolating margins at this granular level, we can spot where usage costs overwhelm revenue versus where margins remain strong.</p>
+                </div>
+                
+                <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                    <img src="openai/modelpnl.png" alt="OpenAI Model Profitability" class="tweet-image" style="max-width: 80%;">
+                </a>
+                
+                <div class="section-content">
+                    <br>
+                    <p><strong>TAKEAWAYS:</strong></p>
+                    
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span><strong>Knowing which features bleed margin versus those that drive profitability</strong> is crucial for designing targeted experiments. These will serve as important success metrics for our experiment design.</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span><strong>Deep Research for Pro is hemorrhaging margin at -146%</strong>, while almost every other model and tier combination remains solidly profitable.</span>
+                        </li>
+                    </ul>
+                    
+                    <p><u>Below, I will break down how I came up with these numbers. Please note that most of the numbers are based on educated assumptions. For this exercise, I have focussed more on the logic, approach, and financial model and have kept the assumptions dynamically linked.</u></p>
+                </div>
+                
+                <div class="section-content">
+                    <br>
+                    <p><strong>MODELLING THE USER BASE</strong></p>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/use.png" alt="OpenAI Usage Model" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/user.png" alt="OpenAI User Base Model" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 30px;">
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Assumed a starting base of monthly users</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Assumed a 20% growth</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Assumed and modelled a monthly churn% across different tiers</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Assumed certain plan downgrades</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Monthly Active Users for Feb = Jan Base + Growth - Plan level Churn + Downgrades</span>
+                        </li>
+                    </ul>
+                    
+                    <p>This is how I defined churn rates:</p>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/churn.png" alt="OpenAI Churn Rates Definition" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <p>The churn definitions for Plus and Pro focus on payment status, ensuring revenue accuracy in the P&L, but they delay the recognition of cancellations, which may understate churn intent.</p>
+                    <br>
+                    <p><em>As an org, we should also track a separate metric for cancellations (e.g., users who cancel in February but are still active due to payment) to see a leading indicator of forecasted churn.</em></p>
+                    <br>
+                    <p><strong>TAKEAWAY:</strong> <em>Growth, retention, churn, cancellation %</em> at a consumer tier level are important L2 metrics that should be used as check metrics for any ARPU expansion experiment.</p>
+                    
+                    <br>
+                    <p><strong>MODELLING THE COST OF SERVICING USERS</strong></p>
+                    <br>
+                    <p>To understand the cost dynamics, I analyzed the variable costs of servicing queries across OpenAI's consumer tiers. I started by mapping:</p>
+                    <br>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Each tier's access to specific models</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Estimated number of queries based on model usage across tiers (assumption)</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Using OpenAI's API pricing as a guide and estimated tokens for each model interaction, calculated the cost per query for each model and tier combination</span>
+                        </li>
+                        
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Finally, Total Cost / User = Per-query costs * average monthly query volume</span>
+                        </li>
+                        
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <span>Since there wasn't a lot of info on Deep Research and SORA costs, I have assumed</span>
+                                <ul style="list-style-type: none; padding-left: 10px; margin-top: 5px;">
+                                    <li style="display: flex; margin-bottom: 5px;">
+                                        <span style="display: inline-block; margin-right: 10px;">○</span>
+                                        <span>Deep research = 5x of standard costs</span>
+                                    </li>
+                                    <li style="display: flex; margin-bottom: 5px;">
+                                        <span style="display: inline-block; margin-right: 10px;">○</span>
+                                        <span>SORA = 10x of 4o costs</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/modelc.png" alt="OpenAI Model Costs" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/token.png" alt="OpenAI Token Costs" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <br>
+                    <p><strong>TAKEAWAY:</strong></p>
+                    
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <span>Pro incurs outsize costs - particularly from high-compute models, where monthly usage can easily top 100+ queries at a steep per-query rate. Plus at an average customer cost of $6 displays strong margins</span>
+                        </li>
+                    </ul>
+                    
+                    <br>
+                    <p><strong>CALCULATING THE MODEL LEVEL PROFITABILITY</strong></p>
+                    
+                    <p>To pinpoint which models are profitable and which are drains on margin, I next attributed both revenue and costs at the model level. On the revenue side, I attributed a subscriber's monthly fee to a specific model based on how many queries they ran on each model. On the cost side, it was more</p>
+                    
+                    <p>straightforward and direct - I used the same query counts but multiplied by the specific per-query/compute cost for each model-tier combination:</p>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/attr.png" alt="OpenAI Revenue Attribution" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 20px;">
+                        <li style="display: flex; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <span><strong>High-Margin Models:</strong> Standard models (e.g., 4o or o3) delivered margins of up to ~99%.</span>
+                            </div>
+                        </li>
+                        
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <span><strong>Loss-Making Features:</strong> "Deep Research" in the Pro tier showed a -146% margin. Total costs were as high as $140M - reflecting how a handful of heavy, high-compute use cases can overwhelm the flat subscription fee.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section" id="section3">
+                <h2>3. Understanding User Sentiment Before Designing the Experiment</h2>
+                
+                <div class="section-content">
+                    <p>Before jumping into a pricing experiment, I wanted to understand how users felt about transitioning to a credit-based model.</p>
+                    
+                    <div class="button-container">
+                        <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=1393720432#gid=1393720432" target="_blank" class="sheet-button">
+                            Check Analysis Here
+                        </a>
+                    </div>
+                    
+                    <p>For this I analyzed the top 250 comments on Sam Altman's tweet and grouped them into sentiment categories:</p>
+                    
+                    <img src="openai/sent.png" alt="Sentiment Analysis of User Comments" class="tweet-image" style="max-width: 60%;">
+                    
+                    <p>Roughly 70% were negative, 17% positive, and 13% neutral - indicating overall skepticism toward the idea of credits. Following were the issues:</p>
+                    
+                    <img src="openai/themes.png" alt="Themes in User Comments" class="tweet-image" style="max-width: 64%;">
+                    
+                    <p>Pricing and business model here reflect an overall psychological dislike towards a credit based pricing model. Below are some of the tweets that highlight this:</p>
+                    <br>
+                    <p><em>"Every platform I have used that does this, I unsubscribe. This will hurt daily users pockets"</em></p>
+                    <br>
+                    <p><em>"Consumers will find metering confusing. There will be different prices, and people don't understand why."</em></p>
+                    <br>
+                    <p><em>"I, like any sane individual, utterly despise credit systems. It is introducing a new unknown. At least with a monthly sub - I know my cash flow."</em></p>
+                    <br>
+                    <p><strong>But 30% of the tweets also had suggestions:</strong></p>
+                    <br>
+                    <p><em>"Offer unlimited access to base features, limited access to advanced features, and pay-per-use option for advanced features with cost estimates shown in advance."</em></p>
+                    <br>
+                    <p><em>"Keep current $20/month limits, but allow users to top up another $20 to extend usage across all features. Use cost ratios for each feature behind the scenes to balance usage."</em></p>
+                    <br>
+                    <p><em>"Use top-ups instead of credits"</em></p>
+                    <br>
+                    <p><em>"Use an add-on subscription model instead, with unlimited access to specific features for an additional monthly fee, while maintaining basic access to all features."</em></p>
+                    <br>
+                    <p><em>"Keep the current system the same and add an option to purchase additional usage limits."</em></p>
+                    <br>
+                    <p><strong>TAKEAWAYS:</strong></p>
+                    
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <span>By pairing user sentiments with the hard data on margins and costs, we can craft pricing experiments that address user anxieties while still capturing incremental revenue from power users.</span>
+                            </div>
+                        </li>
+                        
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <span>We should keep track of user sentiments across platforms like Reddit and X. This feedback loop helps ensure the final solution is both financially sound and user-loved. Given a frequent concern around competitive offerings, it is also important to keep a close track of how players like Grok and Anthropic respond.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section" id="section4">
+                <h2>4. Designing the pricing experiment</h2>
+                
+                <div class="section-content">
+                    <p>Our current consumer PnL indicates that a small cohort of heavy users, especially on Pro, significantly impacts margins. While a pure credit-based model might recapture costs, user sentiment reveals strong resistance to "constant metering."</p>
+                    
+                    <br>
+                    <p><strong>Solution: a hybrid subscription + top-up approach</strong></p>
+                    <br>
+                    
+                    <p>This preserves a flat monthly fee but prompts users beyond a certain usage cap to purchase additional "top up packs". This approach seeks to improve margins without alienating most subscribers.</p>
+                    
+                    <br>
+                    <p><strong>FURTHER CUSTOMER SEGMENTATION FOR TARGET GROUP:</strong> <em>My strong hunch is that even within the pro and plus users there is a strong pareto of users that are driving down the margins through heavy usage. To identify these high cost users we will look at monthly usage data (e.g., total queries, token consumption) at a user cohort level. Flag the top 5–10% whose average monthly usage is multiple times above the median. For these power users, break down which models and features (e.g., Deep Research) they consume most. Validate whether most margin leakage occurs among a small cohort. Once we have validated this, we will land on our target experiment cohort:</em> <u>Top 10% of Plus and Pro users based on total monthly token consumption.</u></p>
+                    
+                    <br>
+                    <p><strong>EXPERIMENT CONSTRUCT</strong></p>
+                    <br>
+                    
+                    <ol>
+                        <li>
+                            <strong>Control Group:</strong> Continues using the existing subscription model with no additional charges or top-up prompts for Deep Research queries. Baseline daily usage limits remain unmetered or reflect existing caps with no enforced paywall.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Test Group:</strong> Same Base Subscription ($20/month for Plus, $200/month for Pro). Added daily soft cap for Deep Research queries - <strong>30/day for Plus, 100/day for Pro</strong>. Once users cross this threshold, they see a prompt to purchase additional usage packets.
+                        </li>
+                    </ol>
+                    
+                    <br>
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/expp.png" alt="Experiment Design and Top-Up Options" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    <br>
+                    
+                    <p><strong>Selection Criteria</strong></p>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>High-Usage Cohort:</strong> Identify the top 10% of Plus and Pro users by historical usage (token consumption/month). Only these heavy users are placed in the test group.
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Randomization:</strong> Within that high-usage cohort, randomly assign half to "Test" and half to "Control," ensuring like-for-like comparison.
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <p><strong>DURATION:</strong> 3 monthly billing cycles to account for natural usage fluctuations and churn patterns.</p>
+                    
+                    <br>
+                    <p><strong>DETAILED USER FLOW:</strong></p>
+                    <br>
+                    
+                    <ol>
+                        <li>
+                            <strong>1. Usage Monitoring</strong>
+                            <ul style="list-style-type: none; padding-left: 20px;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        The system tracks daily queries for Deep Research models (o1, o1pro 4.5, 4o).
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        Each user has a <em>free</em> daily allowance tied to their tier (Plus vs. Pro).
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>2. Threshold Trigger</strong>
+                            <ul style="list-style-type: none; padding-left: 20px;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        When a user's daily queries hit their threshold (30 for Plus, 100 for Pro), the system briefly notifies them: <em>"You've reached your daily Deep Research limit. Would you like to unlock more queries today?"</em>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>3. One-Click Top-Up</strong>
+                            <ul style="list-style-type: none; padding-left: 20px;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        Inline Prompt: A simple overlay or banner appears with the purchase details (<em>e.g., "Unlock 50 more Deep Research queries for $5"</em>).
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        Stored Payment: If the user's card is on file, a single click completes the transaction. Otherwise, they're routed to a quick payment method setup.
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>4. Immediate Access</strong>
+                            <ul style="list-style-type: none; padding-left: 20px;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        Upon successful payment, the daily query count resets, and the user can immediately continue with additional Deep Research queries.
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        No further gating or partial usage limit is shown unless they exceed the new packet capacity again.
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>5. End-of-Day Reset</strong>
+                            <ul style="list-style-type: none; padding-left: 20px;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                                    <span style="display: inline-block; margin-right: 10px;">○</span>
+                                    <div>
+                                        Each day, a user's baseline usage is restored. If they need more than one packet in a day, they can buy multiple packets, although the prompt appears only once they exceed the purchased packet's capacity.
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <br>
+                    <p><strong>GOALS AND SUCCESS METRICS:</strong></p>
+                    <br>
+                    
+                    <p><strong>Goals</strong></p>
+                    <br>
+                    
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Top-Up Adoption Rate: >50%</strong> of users who cross the daily "Deep Research" threshold purchase a top-up.
+                            </div>
+                        </li>
+                        <br>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>ARPU Expansion: 15%</strong> increase in average revenue per user among the heavy-usage cohort (test group) vs. control.
+                            </div>
+                        </li>
+                        <br>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Contribution Margin Improvement: +15 percentage points</strong> in contribution margin for Deep Research usage in the test group.
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <br>
+                    <p><strong>Check Metrics</strong></p>
+                    <br>
+                    
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Churn Rate:</strong> Incremental churn no more than +0.5% above control.
+                            </div>
+                        </li>
+                        <br>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>User Sentiment & NPS:</strong> No drop greater than 2 points in Net Promoter Score among top-usage users.
+                            </div>
+                        </li>
+                        <br>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Usage Volume:</strong> Test group's total queries should not decline by more than 5% compared to control, indicating minimal "usage suppression."
+                            </div>
+                        </li>
+                        <br>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Downgrade Frequency:</strong> Threshold: Less than +1% movement from Pro to Plus or paid to free relative to control, ensuring no mass exodus due to top-up annoyance.
+                            </div>
+                        </li>
+                        <br>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-family: 'Space Mono', monospace;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Competitive Attrition:</strong> Threshold: No material surge (> 1% extra) in cancellations citing direct competitor alternatives
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <br>
+                    <p><strong>ALIGNMENT AND RESPONSIBILITIES ACROSS TEAMS</strong></p>
+                    
+                    <a href="https://docs.google.com/spreadsheets/d/1DkCdoz0iJaapXV7y9XF4DKWYuA7NePL-rVetz3sxMeY/edit?gid=0#gid=0" target="_blank">
+                        <img src="openai/align.png" alt="Team Alignment and Responsibilities" class="tweet-image" style="max-width: 80%;">
+                    </a>
+                    
+                    <br>
+                    <p><strong>GAPS</strong></p>
+                    <br>
+                    
+                    <p>This experiment design is not perfect, and if I had more time and info I would spend more time on the following:</p>
+                    <br>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Size of Prize:</strong> I would do a detailed analysis on what the size of prize at scale for this initiative would be. This would help prioritize resources and team members on this initiative.
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <span style="display: inline-block; margin-right: 10px;">•</span>
+                            <div>
+                                <strong>Future Model Timing:</strong> It might be best to tie these changes to the launch of a new or improved model (e.g., GPT-5). Bundling a pricing update with exciting new features can ease user friction and frame it as a net benefit, not just an extra fee. But running an experiment on current users and products to predict what behaviour might look like for a new model is paramount for decision making. This will help time and design a strong rollout plan
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin: 40px 0;">
+                        <p>---X---</p>
+                    </div>
+                    
+                    <div class="button-container">
+                        <a href="#" id="share-button" class="sheet-button">
+                            Share this analysis
+                        </a>
+                    </div>
+                    
+                    <br>
+                    <p>OpenAI is my dream company - I genuinely believe I could do my life's best work here, and I think the Special Projects team is a perfect fit.</p>
+                    <br>
+                    <p>I have already applied through OpenAI's careers portal, but I believe the standard resume sucks at communicating the nuances - both successes and failures - of what I've done. Here's an interactive resume where you can dive deeper into some of my key projects:</p>
+                    <br>
+                    
+                    <div class="button-container">
+                        <a href="work.html" class="sheet-button" target="_blank">
+                            Learn more about my Work Ex
+                        </a>
+                    </div>
+                    
+                    <script>
+                        // Script to handle the copy link functionality
+                        document.getElementById('share-button').addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const url = window.location.href;
+                            navigator.clipboard.writeText(url).then(function() {
+                                // Change button text temporarily to indicate success
+                                const button = document.getElementById('share-button');
+                                const originalText = button.textContent;
+                                button.textContent = 'Link Copied!';
+                                setTimeout(function() {
+                                    button.textContent = originalText;
+                                }, 2000);
+                            }).catch(function(err) {
+                                console.error('Could not copy text: ', err);
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="socials">
+            <a href="mailto:karn@stanford.edu" class="social-link">
+                <span class="social-icon">✉️</span>karn@stanford.edu
+            </a>
+            <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
+                <span class="social-icon">𝕏</span>bluebrd003
+            </a>
+            <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
+                <span class="social-icon">🔗</span>LinkedIn
+            </a>
+        </div>
+    </footer>
+</body>
+</html> 
