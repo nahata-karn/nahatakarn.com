@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTCRNRY0HD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BTCRNRY0HD');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Product Process at Notion - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .notion-logo {
+            font-size: 60px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+        
+        .content-section {
+            margin: 40px 0;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .custom-tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2D3748;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            width: max-content;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+        }
+
+        .custom-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2D3748 transparent transparent transparent;
+        }
+
+        .tooltip-container:hover .custom-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        button:hover, a:hover {
+            background-color: white !important;
+            border-color: black !important;
+            transform: translate(1px, 1px) !important;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1) !important;
+        }
+        button:active, a:active {
+            background-color: white !important;
+            transform: translate(3px, 3px) !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+    <a href="work.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+    
+    <div class="header-nav" style="position: absolute; top: 20px; right: 30px; font-family: 'Space Mono', monospace; font-size: 14px; display: flex; align-items: center; height: 40px;">
+        <a href="work.html" style="color: black; text-decoration: none; margin-right: 20px;">Work</a>
+        <a href="index.html" style="color: black; text-decoration: none;">Home</a>
+    </div>
+
+    <div class="container">
+        <div class="content" style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center;">
+                <div class="notion-logo">📝</div>
+                <h1>Developing a Product Process for Notion</h1>
+            </div>
+            
+            <p class="swiggy-description" style="margin: 32px auto;">This is my final assignment from Stanford GSB's iconic <a href="pmf.html" target="_blank" style="color: #0000FF; text-decoration: underline;">Product/Market Fit (PMF)</a> class, taught by <a href="https://en.wikipedia.org/wiki/Andy_Rachleff" target="_blank" style="color: #0000FF; text-decoration: underline;">Andy Rachleff</a>. The course challenged us to rethink how great products are built - not by chasing flawless execution, but by obsessively hunting for a market that's truly desperate for what you're offering. Here, I lay out my personal product development process.</p>
+            
+            <div class="content-section" style="text-align: left;">
+                <p>For this assignment, I am assuming the role of Chief Product Officer at a consumer software company similar to <strong>Notion</strong> - a place I would love to join post-GSB. To ground the process, I will illustrate an example of launching a hypothetical product, <em>"Notion Knowledge Agents,"</em> where users can turn parts of their Notion workspace into AI-driven knowledge bases that others can pay to access.</p>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">1. Idea Generation & Prioritization</h2>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">A. Authentic Sourcing</h3>
+
+                <p>We begin by ensuring every proposed insight is championed by someone with a tangible, authentic connection to the problem space. Authenticity means:</p>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;"><strong>Personal Experience:</strong> The champion has directly felt the pain point or repeatedly seen it in their environment.</li>
+                    <li style="margin-bottom: 16px;"><strong>Domain Expertise:</strong> They understand the relevant technology and user personas deeply, which often hints they have an "unfair" perspective.</li>
+                    <li style="margin-bottom: 16px;"><strong>Genuine Enthusiasm:</strong> They are mission-driven rather than mercenary. This passion helps sustain momentum through inevitable challenges.</li>
+                </ul>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <p style="margin: 0;">Suppose the PM lead from the Templates team has observed that many creators already sell specialized Notion templates. Inspired by recent breakthroughs in LLMs, she proposes: <em>"What if we enabled these creators to train AI on their personal knowledge, then monetize access to it?"</em> Her authenticity stems from seeing creators attempt (and struggle) to package and sell unique expertise beyond just static templates.</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">B. Tech Inflection (<span class="tooltip-container"><a href="https://www.oaktreecapital.com/docs/default-source/memos/1993-02-15-the-value-of-predictions-or-where-39-d-all-this-rain-come-from.pdf?sfvrsn=2" target="_blank" style="color: #0000FF; text-decoration: underline;">Ideally Non-Consensus</a><span class="custom-tooltip">Drawing from Howard Marks who believes that being non-consensus and right is the only way to generate superior returns in investing.</span></span>)</h3>
+
+                <p>We focus on <strong>technology-based</strong> inflection points because these shifts tend to create brand-new product possibilities.</p>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">If the champion's proposal is purely reliant on a social or behavioral trend without underlying technological change, I'm cautious about devoting resources to a fully new product.</li>
+                    <li style="margin-bottom: 16px;">Conversely, if the technology (e.g., powerful LLMs) is at a tipping point, we see an opening to create something truly distinctive.</li>
+                </ul>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">C. Consensus Filtering & Disruption Check</h3>
+
+                <p>I as CPO gather one engineering leader, one business leader, and one design leader for quick one-on-one discussions rather than a group meeting (to minimize groupthink).</p>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">If <em>all</em> three rave about it, the idea may be too consensus. If at least one or two are intrigued while another is dubious, that's typically a green light for deeper testing.</li>
+                </ul>
+
+                <p><strong>Time Check:</strong> This initial vetting usually spans 1–2 weeks of discussions.</p>
+
+                <p>We also give special weight to ideas showing signs of <span class="tooltip-container"><a href="https://www.christenseninstitute.org/theory/disruptive-innovation/" target="_blank" style="color: #0000FF; text-decoration: underline;">disruptive potential</a><span class="custom-tooltip">According to Clayton Christensen Disruptive Innovation describes a process by which a product or service takes root in simple applications at the bottom of the market - typically by being less expensive and more accessible -and then relentlessly moves upmarket, eventually displacing established competitors.</span></span> (new-market or low-end). If it's possible to serve an underserved or non-consuming audience in a simpler, cheaper, or more convenient way, that's a significant differentiator.</p>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">2. Small, Focused Team Formation</h2>
+
+                <p>Once the idea clears the initial filters, I form a lean, cross-functional "insight team." Typically, it includes:</p>
+
+                <ol style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;"><strong>The Champion</strong> (who has authenticity and passion),</li>
+                    <li style="margin-bottom: 16px;"><strong>One Engineer</strong> (capable of quick prototypes and feasibility checks),</li>
+                    <li style="margin-bottom: 16px;"><strong>One Business/Go-to-Market</strong> lead (to shape pricing models and market experiments).</li>
+                </ol>
+
+                <p>This team's mandate is to learn swiftly rather than execute a predefined plan.</p>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <p style="margin: 0;">We invite the PM Lead (original insight generator), a senior engineer familiar with LLM integration, and a Notion marketing lead who understands how to position "Knowledge Agents" to the existing user base.</p>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">3. Articulating the Value Hypothesis</h2>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">A. Building a Short, Structured Brief</h3>
+
+                <p>At this stage, the team documents a concise <strong>1–2 page</strong> overview:</p>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;"><strong>What?</strong> Identify the core job to be done and how the product addresses it.</li>
+                    <li style="margin-bottom: 16px;"><strong>Who?</strong> Pinpoint a narrow initial user segment. In a consumer context, this might involve demographics or a specific user persona. Importantly, aim for early adopters who are <em>desperate</em> enough to try incomplete solutions. Need is insufficient, desperation is key.</li>
+                    <li style="margin-bottom: 16px;"><strong>How?</strong> Propose a working business model that might serve as the initial monetization approach. The question is: <em>"How do we charge?"</em> - subscription, transaction fee, usage fee, or otherwise?</li>
+                </ul>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">B. Leap-of-Faith Assumption</h3>
+
+                <p>They then clarify the single biggest assumption that has to prove true for the product to succeed. Often, it's something about user willingness to pay, or consistent usage patterns. If this assumption fails, the entire idea collapses.</p>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                            <li style="margin-bottom: 12px;"><strong>Brief:</strong> <em>"Let advanced creators train an AI agent on their Notion workspace to package and sell specialized knowledge."</em></li>
+                            <li style="margin-bottom: 12px;"><strong>Who:</strong> We start with top-tier template sellers who already have paying customers. They are likely early adopters open to new revenue streams.</li>
+                            <li style="margin-bottom: 12px;"><strong>How:</strong> A subscription model where an external user pays $10 per month to query the AI. Part of that revenue goes to the creator; part to Notion.</li>
+                            <li><strong>Leap-of-Faith:</strong> <em>"People will pay real money on a recurring basis to tap into curated AI-driven knowledge from recognized experts."</em></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">4. Concept Test vs. Implementation Phase</h2>
+
+                <p>At this point, the team needs to decide whether to build a quick MVP or start with a concept test - depending on feasibility and time/cost constraints.</p>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">A. The Concept Test (If MVP Is Too Costly or Time-Consuming)</h3>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">Typically consists of a <strong>landing page</strong> or a short <strong>video</strong> pitch. We use signups, waitlists, or pre-order deposit requests to gauge real interest.</li>
+                    <li style="margin-bottom: 16px;">If user engagement is weak, we might change the "who" or refine the messaging. This phase often lasts about two weeks.</li>
+                </ul>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">B. The Implementation Phase</h3>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">This might involve building out a "concierge" approach or partial functionality that manually simulates some parts of the product to gather data.</li>
+                </ul>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <ol style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 12px;">If our engineer says, <em>"We can spin up a rudimentary system in under a month,"</em> we proceed with a short Implementation Phase.</li>
+                            <li style="margin-bottom: 12px;">Alternatively, if it's more complex, we do a quick concept test: a <strong>demo video</strong> showing how <em>"Knowledge Agents"</em> might look and a waitlist sign-up. We share it with advanced creators, monitor conversions, and watch for early excitement or apathy.</li>
+                            <li style="margin-bottom: 12px;">If the signups or feedback are abysmal, we either pivot the target segment or kill the project.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">5. MVP Build & Early Rollout</h2>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">A. Building a Bare-Bones MVP</h3>
+
+                <p>If the concept resonates, we proceed to a bare-bones MVP that delivers only the critical features needed to validate the leap-of-faith assumption. We keep scope tight to avoid wasted effort. The champion and engineer collaborate to prioritize must-have functionality, focusing on the key job to be done.</p>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">B. Targeted Rollout & Real Usage</h3>
+
+                <p>We launch the MVP to a small set of potential early adopters—ideally, a curated group that's predisposed to test new features. We then observe behavioral metrics:</p>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;"><strong>Retention:</strong> Do testers continue to use or pay for the product once initial novelty wears off?</li>
+                    <li style="margin-bottom: 16px;"><strong>Referrals:</strong> Are early adopters spontaneously recommending it to peers (organic word-of-mouth)?</li>
+                    <li style="margin-bottom: 16px;"><strong>Willingness to Pay:</strong> Do they subscribe</li>
+                </ul>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                            <li style="margin-bottom: 12px;">The MVP includes: (1) a minimal interface to upload or tag certain Notion pages for AI training, (2) a basic subscription payment flow, and (3) a barebones query UI.</li>
+                            <li style="margin-bottom: 12px;">We select a handful of top-tier creators from our waitlist. They integrate their content, set a price, and share the link. We watch if actual consumers pay or if it all fizzles out.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">6. Implementation & Iteration</h2>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">A. Daily Tracking & User Interviews</h3>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">The champion team checks usage logs daily, looking for drop-off points.</li>
+                    <li style="margin-bottom: 16px;">They also conduct short user interviews or <em>"follow me home"</em> sessions to understand friction. They might incorporate the <em>"5 Whys"</em> method to dig deeper into user complaints or confusion.</li>
+                    <li style="margin-bottom: 16px;"><strong><a href="https://www.youtube.com/watch?v=9kAKyrRKKz0" target="_blank" style="color: #0000FF; text-decoration: underline;">Savoring the Surprise</a>:</strong> Actively look for unexpected pockets of strong usage or novel use-cases. If a user group you never considered loves the product, double down on that audience instead of trying to fix the "bad" or chase an indifferent group. This <em>"surprise"</em> often reveals the real desperation or best fit - embrace it even if it changes initial assumptions.</li>
+                    <li style="margin-bottom: 16px;"><strong>Detailed Logging:</strong> Keep records of user comments, usage spikes, or friction episodes. Surprises typically show up as anomalies or unusual patterns in user behavior.</li>
+                </ul>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">B. Adapting the "Who"</h3>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">If advanced creators turn out to be lukewarm, we might pivot to a different user group (e.g., coaches, domain experts, or small businesses).</li>
+                    <li style="margin-bottom: 16px;">We do not rewrite the entire product's "what" at this point; we just reexamine the target segment or distribution strategy.</li>
+                </ul>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                            <li style="margin-bottom: 12px;">We spend a few weeks refining how easy or hard it is for a creator to configure the AI after hearing complaints about the training process.</li>
+                            <li style="margin-bottom: 12px;">If we notice only a niche group of professional consultants adopting it, we might pivot the "who" to consultants specifically, offering deeper customization for them rather than chasing Notion template creators.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 20px; margin-top: 40px; margin-bottom: 24px;">7. Determining Product-Market Fit</h2>
+
+                <p>We give each new initiative a 3-month total runway to demonstrate meaningful traction:</p>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">A. The Hunt for Exponential Organic Growth</h3>
+
+                <p>The clearest sign of product-market fit in a consumer or prosumer context is <strong>explosive growth</strong> driven by <strong>word-of-mouth and retention</strong>. No amount of paid acquisition can replicate the signal that customers themselves find the product valuable enough to tell others about it.</p>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">B. Behavioral & Revenue Metrics</h3>
+
+                <p>We review:</p>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;"><strong>Retention:</strong> Are the same users returning consistently over multiple weeks or months?</li>
+                    <li style="margin-bottom: 16px;"><strong>Referrals:</strong> How many net new users came from existing users?</li>
+                </ul>
+
+                <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">C. Pivot or Stop</h3>
+
+                <ul style="margin-top: 16px; margin-left: 24px;">
+                    <li style="margin-bottom: 16px;">If, after repeated iteration on the "who" or distribution model, usage remains tepid and there is <strong>no surprising bright spot</strong>, we shut down the project.</li>
+                    <li style="margin-bottom: 16px;">If we see an enthusiastic, sticky group with high word-of-mouth, we double down on that market and expand with a <span class="tooltip-container"><a href="https://productstrategist.wordpress.com/2015/01/24/the-bowling-alley/" target="_blank" style="color: #0000FF; text-decoration: underline;">bowling pin strategy</a><span class="custom-tooltip">The "bowling pin" strategy in the technology adoption cycle refers to a method of targeting a specific market segment (the "head pin") to gain traction and then leverage that success to attract more customers (the "other pins").</span></span>.</li>
+                </ul>
+
+                <div style="background-color: rgb(247, 246, 243); border-radius: 3px; padding: 24px 28px; margin: 32px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                        <span style="color: rgb(55, 53, 47); font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">EXAMPLE</span>
+                    </div>
+                    <div style="font-size: 16px; line-height: 1.6; color: rgb(55, 53, 47);">
+                        <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                            <li style="margin-bottom: 12px;">If usage among our pilot group remains strong, and some creators earn real revenue from their <em>"Knowledge Agents,"</em> we see that as a product-market fit signal.</li>
+                            <li style="margin-bottom: 12px;">If adoption remains flat despite pivoting to multiple audiences, we accept defeat, kill or pause the project, and document lessons learned.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 80px auto; text-align: center;">
+            <div style="font-family: 'Space Mono', monospace; font-size: 20px; margin-bottom: 50px; color: #666;">---X---</div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                <button onclick="navigator.clipboard.writeText(window.location.href); this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share this analysis', 2000)" style="padding: 12px 20px; width: 280px; background-color: white; border: 2px solid black; border-radius: 4px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: bold; transition: all 0.15s ease-in-out; color: black; box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); letter-spacing: 0.5px;">
+                    Share this analysis
+                </button>
+                <a href="index.html" target="_blank" style="padding: 12px 20px; width: 280px; background-color: white; border: 2px solid black; border-radius: 4px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: bold; text-decoration: none; color: black; transition: all 0.15s ease-in-out; box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); letter-spacing: 0.5px;">
+                    Learn about my work ex
+                </a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="socials">
+                <a href="mailto:karn@stanford.edu" class="social-link">
+                    <span class="social-icon">✉️</span>karn@stanford.edu
+                </a>
+                <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
+                    <span class="social-icon">𝕏</span>bluebrd003
+                </a>
+                <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
+                    <span class="social-icon">🔗</span>LinkedIn
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

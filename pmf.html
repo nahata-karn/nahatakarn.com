@@ -110,9 +110,10 @@
         <span>&lt;</span>
     </a>
     
-    <a href="index.html" class="home-button">
-        <span style="font-size: 16px;">🏠</span>
-    </a>
+    <div class="header-nav" style="position: absolute; top: 20px; right: 30px; font-family: 'Space Mono', monospace; font-size: 14px; display: flex; align-items: center; height: 40px;">
+        <a href="work.html" style="color: black; text-decoration: none; margin-right: 20px;">Work</a>
+        <a href="index.html" style="color: black; text-decoration: none;">Home</a>
+    </div>
 
     <div class="container company-page">
         <div class="swiggy-content">
@@ -123,7 +124,7 @@
             <p class="swiggy-description">What truly determines whether a startup can succeed? How do you increase your chances of finding Product Market Fit?</p>
             
             <ul class="swiggy-text">
-                <li>Taught by <strong style="color: #8C1515;">Andy Rachleff</strong>, founder of <strong style="color: #8C1515;">Benchmark Capital</strong> (one of the best VC firms ever, investors in eBay, Juniper, Uber, Twitter, Snap, Instagram) and <strong style="color: #8C1515;">Wealthfront</strong> (a $5B+ company).</li>
+                <li>Taught by <strong><a href="https://en.wikipedia.org/wiki/Andy_Rachleff" target="_blank" style="color: #0000FF; text-decoration: underline;">Andy Rachleff</a></strong>, founder of <strong style="color: #8C1515;">Benchmark Capital</strong> (one of the best VC firms ever, investors in eBay, Juniper, Uber, Twitter, Snap, Instagram) and <strong style="color: #8C1515;">Wealthfront</strong> (a $5B+ company).</li>
                 
                 <li>My <strong style="color: #8C1515;">favourite class at Stanford</strong>. Andy is a legend. Benchmark Capital is a storied VC firm, and Wealthfront is massive, so it was incredible to learn directly from him.</li>
                 
@@ -157,7 +158,7 @@
             
             <div class="cool-projects" style="margin-top: 0;">
                 <div class="project-bubble" id="project-trigger-1">
-                    <p><span class="emoji">💡</span> <strong style="color: #8C1515;">My Own Product Development Process</strong> <span style="font-size: 12px;">↗</span></p>
+                    <p><span class="emoji">💡</span> <strong style="color: #8C1515;">Developing a Product Process for Notion</strong> <span style="font-size: 12px;">↗</span></p>
                 </div>
                 
                 <div class="project-details" id="project-details-1" style="display: none;">
@@ -227,8 +228,8 @@
             const closeBottomButtons = document.querySelectorAll('.close-details-bottom');
             
             projectTrigger1.addEventListener('click', function() {
-                // Open the Google Doc link instead of toggling the panel
-                window.open('https://docs.google.com/document/d/1v3XPjMPMxsM2h9tiSYKms-RpMEXbGKjUrAtv0-dwFf8/edit?usp=sharing', '_blank');
+                // Navigate to the new page instead of opening Google Doc
+                window.location.href = 'notion-product-process.html';
             });
             
             projectTrigger3.addEventListener('click', function() {
@@ -264,6 +265,19 @@
             });
         });
     </script>
+    
+    <div style="max-width: 600px; margin: 80px auto; text-align: center;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 20px; margin-bottom: 50px; color: #666;">---X---</div>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+            <button onclick="navigator.clipboard.writeText(window.location.href); this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share this analysis', 2000)" style="padding: 12px 20px; width: 280px; background-color: white; border: 2px solid black; border-radius: 4px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: bold; transition: all 0.15s ease-in-out; color: black; box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); letter-spacing: 0.5px;">
+                Share this analysis
+            </button>
+            <a href="index.html" target="_blank" style="padding: 12px 20px; width: 280px; background-color: white; border: 2px solid black; border-radius: 4px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: bold; text-decoration: none; color: black; transition: all 0.15s ease-in-out; box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); letter-spacing: 0.5px;">
+                Learn about my work ex
+            </a>
+        </div>
+    </div>
     
     <footer class="footer">
         <div class="socials">
