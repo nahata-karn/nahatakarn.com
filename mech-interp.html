@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTCRNRY0HD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BTCRNRY0HD');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanistic Interpretability - Karn Nahata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .logo {
+            font-size: 60px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+        
+        .content-section {
+            margin: 40px 0;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .custom-tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2D3748;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            width: max-content;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+        }
+
+        .custom-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2D3748 transparent transparent transparent;
+        }
+
+        .tooltip-container:hover .custom-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        button:hover, a:hover:not(.no-hover-effect) {
+            background-color: white !important;
+            border-color: black !important;
+            transform: translate(1px, 1px) !important;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1) !important;
+        }
+        button:active, a:active:not(.no-hover-effect) {
+            background-color: white !important;
+            transform: translate(3px, 3px) !important;
+            box-shadow: none !important;
+        }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    // Show a temporary "Copied!" message
+                    const shareButton = event.target;
+                    const originalText = shareButton.innerText;
+                    shareButton.innerText = "Copied!";
+                    
+                    // Reset the button text after 2 seconds
+                    setTimeout(() => {
+                        shareButton.innerText = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert('Failed to copy URL. Please try again.');
+                });
+        }
+    </script>
+</head>
+<body>
+    <a href="work.html" class="back-arrow">
+        <span>&lt;</span>
+    </a>
+    
+    <div class="header-nav" style="position: absolute; top: 20px; right: 30px; font-family: 'Space Mono', monospace; font-size: 14px; display: flex; align-items: center; height: 40px;">
+        <a href="work.html" style="color: black; text-decoration: none; margin-right: 20px;">Work</a>
+        <a href="index.html" style="color: black; text-decoration: none;">Home</a>
+    </div>
+
+    <div class="container">
+        <div class="content" style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center;">
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="mi_images/claude.png" alt="Claude" style="max-width: 150px;">
+                </div>
+                <h1>Dummies Guide to Mechanistic Interpretability</h1>
+            </div>
+            
+            <p class="description" style="margin: 32px auto; font-style: italic;">Field Notes from the Gradient Frontier: Wrestling Dense Papers to Grok Mechanistic Interpretability</p>
+            
+            <div class="content-section" style="text-align: left;">
+                <p>ChatGPT is everywhere. Every week, 500M+ people across the planet pour their hearts into it, ask it for dating advice, enlist its help on homework, and rely on it for all kinds of personal and professional questions. But most of us dont really understand how a machine can "think" - or whether it edges toward something like consciousness?</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/gpt.png" alt="ChatGPT Interface" style="max-width: 100%;">
+                </div>
+                
+                <p>Behind that friendly chat interface is a staggering number of matrix multiplications - billions - solving linear algebra, trained on oceans of data, powered by processors originally designed to support high definition gaming, with a sprinkle of human feedback. Somehow, out of this concoction, a glimmer of reason and coherence emerges. The architecture of this thinking machine is loosely based on the human brain, and much like it, we don't fully understand how it is able to learn and perform cognitive tasks.</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/matrix.png" alt="Matrix Multiplications" style="max-width: 100%;">
+                </div>
+                
+                <p><span style="background-color: #fffce0;">Mechanistic interpretability (MI) aims to open this "black box". It is a nascent field in AI that is trying to uncover how individual parts of a model interact to produce its outputs.</span></p>
+                
+                <p>It's like the history of biology: for centuries, we've tried understanding how molecules become proteins, how proteins make cells, and how cells form conscious beings. AI seems to echo that process, but in digital form. MI is piecing together the building blocks of something that appears to reason, even if we're not entirely sure how. As someone who has always been curious about big existential questions - <em>like why we're here and what consciousness even is</em> - this new frontier of AI is especially exciting.</p>
+                
+                <p>Philosophical pursuits aside, investing capital behind this problem also makes economic sense. The smartest people across critical industries today are using LLMs to help take decisions. But if they can't see inside this powerful tool, they can't <strong><em>fully</em></strong> control or even trust their outcomes. By building an output attribution system, MI aims to help steer and align LLMs towards human values.</p>
+                
+                <p>Anthropic has done some of the most rigorous and forward-thinking work in mechanistic interpretability. While the field is still nascent, their research has consistently pushed the boundaries of how we understand what's happening inside large language models. The three papers below form the foundation of my understanding of this space - each building on the last, and together offering a compelling narrative of how we might one day <em>read</em> and even <em>steer</em> the thoughts of machines.</p>
+                
+                <h2 style="font-size: 24px; margin-top: 40px; margin-bottom: 20px;">1. <a href="https://transformer-circuits.pub/2022/toy_model/index.html" target="_blank" style="color: inherit; text-decoration: underline;" class="heading-link no-hover-effect">Toy Models of Superposition</a> (2022)</h2>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Basics of Neural Networks</h3>
+                
+                <p>A neural network starts with an <strong>input</strong> - such as an image or a sentence - and processes it through one or more <strong>layers</strong> of interconnected "<strong>neurons</strong>." A neuron can be thought of as a small computational unit.</p>
+                
+                <p>Each neuron computes a simple function: it applies a <strong>linear transformation</strong> (multiplying the input by certain "<strong>weights</strong>") followed by a <strong>nonlinear activation</strong> (like a ReLU or sigmoid). Stacking these neurons into multiple layers allows the network to gradually transform raw data into higher-level "features" or concepts.</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/nn.png" alt="Neural Network Structure" style="max-width: 100%;">
+                </div>
+                
+                <p>For smaller models, it's sometimes possible to identify a direct link between a single neuron and a distinct concept. However, as the number of neurons grows into the thousands, neural networks develop more complex internal representations. In practice, researchers have observed that while some neurons cleanly map to individual features, this doesn't hold for many of the neurons in large-scale models - particularly in large language models (LLMs).</p>
+                
+                <p>The paper "<strong><a href="https://transformer-circuits.pub/2022/toy_model/index.html" target="_blank" style="color: inherit; text-decoration: underline;" class="no-hover-effect">Toy Models of Superposition</a></strong>" examines why and how these large networks often represent more features than they have neurons. This phenomenon is called <strong><span style="background-color: #fffce0;">superposition</span></strong>, where multiple concepts can be encoded in a single neuron. The paper employs smaller, more tractable "toy" networks to illustrate this phenomenon and explore how and why it happens.</p>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Key Takeaways</h3>
+                
+                <ol>
+                    <li>
+                        <strong>Superposition Is Real</strong>
+                        <p>Networks (neural patterns) do, in fact, compress multiple features into fewer neurons. This is an efficient but complex way for them to store information.</p>
+                    </li>
+                    <li>
+                        <strong>Monosemantic vs. Polysemantic Neurons</strong>
+                        <ul>
+                            <li><strong>Monosemantic</strong> neurons capture a single feature cleanly.</li>
+                            <li><strong>Polysemantic</strong> neurons activate for multiple unrelated features, reflecting the network's inclination to use every bit of representational space as efficiently as possible.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Understanding Superposition:</h3>
+                
+                <p>In a neural network, each layer represents information as a <strong>vector</strong> - a list of numbers. The length of this vector defines how many <strong>dimensions</strong> the model has at that layer to store what it knows. You can think of each dimension as a neuron or a representational axis.</p>
+                
+                <p>But here's the twist: large language models (LLMs) often learn <strong>more features than they have dimensions</strong> to store them. This is called superposition (Schrodinger's Cat anyone?)</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/schro.png" alt="Schrodinger's Cat Meme" style="max-width: 80%;">
+                </div>
+                
+                <p>Instead of assigning one neuron to one idea (like "cat" or "not cat"), the network cleverly <strong>overlaps many features</strong> in the same representational space. It learns to <strong>compress</strong> multiple abstract patterns into a shared set of neurons - and this isn't a mistake. It's just <strong>efficient</strong>.</p>
+                
+                <p>Neural networks are optimized to use their representational space well. If squishing multiple features into one neuron reduces cost without hurting performance, they'll do it. And as it turns out, they do it all the time.</p>
+                
+                <p>In <em>Toy Models of Superposition</em>, the authors construct small networks where they can observe exactly what's going on under the hood. Their key findings:</p>
+                
+                <ul>
+                    <li>The network <strong>stores more features than it has neurons</strong> to store them.</li>
+                    <li>Some neurons are <strong>monosemantic</strong> - they activate for a single, interpretable feature.</li>
+                    <li>But many are <strong>polysemantic</strong> - they activate for multiple unrelated features, depending on context.</li>
+                </ul>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Who programs Superposition?</h3>
+                
+                <p>Superposition happens naturally. It is not programmed into the network - it's an <strong>emergent property</strong> that arises as a side effect of how we train neural networks.</p>
+                
+                <p>Neural networks are trained using "gradient descent" - a process that optimizes for performance, not interpretability. The goal is to minimize prediction error, not to make internal representations clean or human-readable.</p>
+                
+                <p>So during training:</p>
+                
+                <ul>
+                    <li>If the network can perform better by storing multiple useful features in a single neuron, it will.</li>
+                    <li>If there's a bottleneck (fewer neurons than features), it learns to <strong>pack information more densely</strong>.</li>
+                    <li>If there's redundancy across features, it learns to <strong>reuse dimensions efficiently</strong>.</li>
+                </ul>
+                
+                <p>This behavior - compressing multiple features into fewer dimensions - is simply what optimization under resource constraints looks like.</p>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">How do we make sense of Superposition?</h3>
+                
+                <p>Described three strategies to finding a sparse and interpretable set of features if they are indeed hidden by superposition:</p>
+                
+                <p>(1) creating models without superposition, perhaps by encouraging activation sparsity;</p>
+                
+                <p>(2) using dictionary learning to find an over-complete feature basis in a model exhibiting superposition; and</p>
+                
+                <p>(3) hybrid approaches relying on a combination of the two.</p>
+                
+                <p>This makes way for the next seminal paper:</p>
+                
+                <h2 style="font-size: 24px; margin-top: 40px; margin-bottom: 20px;">2. <a href="https://transformer-circuits.pub/2023/monosemantic-features" target="_blank" style="color: inherit; text-decoration: underline;" class="heading-link no-hover-effect">Towards Monosemanticity</a></h2>
+                
+                <p><em>Toy Models of Superposition</em> gave us the core challenge with interpreting language models: superposition. Models try to represent more ideas than they have room for. So they compress.</p>
+                
+                <p><em><a href="https://transformer-circuits.pub/2023/monosemantic-features" target="_blank" style="color: inherit; text-decoration: underline;" class="no-hover-effect">Towards Monosemanticity</a></em> offers a concrete way forward.</p>
+                
+                <p>Key Takeaways from this paper:</p>
+                
+                <ul>
+                    <li>
+                        <strong>SAEs offer a results-worthy path to interpret models.</strong>
+                        <p>They extract clean, often monosemantic features from messy activation patterns - making internal reasoning visible and understandable.</p>
+                    </li>
+                    <li>
+                        <strong>The features are real and generalizable.</strong>
+                        <p>The SAEs are also picking up features that were not in the training set of the SAEs. This is very important as it shows that the method is generalizable.</p>
+                    </li>
+                    <li>
+                        <strong>Scaling reveals sharper structure.</strong>
+                        <p>Bigger autoencoders don't just find more features - they split broad ones into finer, interpretable components. Maybe we have a new scaling law?</p>
+                    </li>
+                    <li>
+                        <strong>Small models hide surprising capacity.</strong>
+                        <p>Even a 512-neuron model can represent tens of thousands of features through compression.</p>
+                    </li>
+                    <li>
+                        <strong>Features show up across different models.</strong>
+                        <p>When you train sparse autoencoders on different language models, you get similar features. This suggests these aren't quirks of a specific model — they reflect something fundamental about how language models represent ideas.</p>
+                    </li>
+                </ul>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Experimentation Set Up</h3>
+                
+                <p>The authors focus on one of the smallest models that still exhibits this problem: a language model with just one layer and 512 neurons per word. For context, GPT-4o - the version of ChatGPT you're likely using - has around 100 layers and tens of thousands of neurons working together to process each token. So this one-layer model is tiny by today's standards.</p>
+                
+                <p>And yet, even in this stripped-down version, we can't easily tell what's going on inside. Even here, a single neuron might be doing ten different things. <span style="background-color: #fffce0;">The goal of this paper is to crack open that internal activity - to break down each neuron's messy signal into clean, understandable components, each tied to a specific, human-recognizable pattern.</span></p>
+                
+                <p>In order to "<em>decompose</em>" a model's thinking, the team also designing models with extremely sparse activations - even going so far as to allow only one neuron to fire at a time. Technically, this should have eliminated superposition. But it didn't solve the deeper problem: the way these models are trained - minimizing the difference between their predicted output and the correct one - still rewarded neurons that carried multiple meanings. Even when the architecture was built for clean reasoning, the training objective silently preferred ambiguity. Turns out, if cramming a few unrelated features into one neuron helps the model get better test scores, that's what it'll do.</p>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">Enter Sparse Auto Encoders</h3>
+                
+                <p>An <strong>encoder</strong> is anything that compresses information. A <strong>decoder</strong> is what reconstructs it back. For example:</p>
+                
+                <ul>
+                    <li>
+                        <strong>ZIP files:</strong> Our computers encode a bunch of files into a compressed archive, and decode it when we open it.
+                    </li>
+                    <li>
+                        <strong>JPEGs:</strong> Our phones encode photos to reduce size - the decoder lets us view them.
+                    </li>
+                    <li>
+                        <strong>Spotify:</strong> Audio is compressed and streamed, then decoded for playback.
+                    </li>
+                </ul>
+                
+                <p>In all of these, the encoder tries to keep what matters and throw away the rest. The decoder does its best to reconstruct the original, using just that compressed form.</p>
+                
+                <p>Autoencoders are neural networks trained to do the same thing - but learned from data.</p>
+                
+                <ul>
+                    <li>
+                        The <strong>encoder</strong> takes an input (say, an image or a vector from a language model) and compresses it into a smaller internal code.
+                    </li>
+                    <li>
+                        The <strong>decoder</strong> takes that code and tries to reconstruct the original input.
+                    </li>
+                </ul>
+                
+                <p>If the model learns to do this well, it must have captured the <em>core patterns</em> of the data — not surface noise.</p>
+                
+                <p>Autoencoders are widely used in things like Image denoising (removing blur or grain) or Anomaly detection (spotting fraud, system failures, etc.)</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/auto.png" alt="Autoencoder Diagram" style="max-width: 70%;">
+                </div>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">"Sparse" Auto Encoders?</h3>
+                
+                <p>In regular autoencoders, the encoder might activate <em>all</em> features for every input. That works — but it's messy. A <strong>sparse autoencoder</strong> forces the model to <strong>only activate a few features at a time</strong>.</p>
+                
+                <p>This is exactly what we want when we're trying to interpret a model's internal state. Sparse features are easier to name, track, and intervene on.</p>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">How Do We Train a Sparse Autoencoder?</h3>
+                
+                <p>To train a Sparse Autoencoder (SAE), we don't need new data - we need access to what the language model is already doing internally. Specifically, you collect the activation vectors from the model's hidden layers while it processes normal language inputs.</p>
+                
+                <p>We take a pretrained language model and run it on a large dataset. As the model processes each token, it computes internal activations at every layer. For each token, we extract that activation vector (say, a 512-dimensional vector), and save it. This is our training data.</p>
+                
+                <p>So we're not labeling anything. We're not asking the model to do anything special. We're simply running it as-is on raw text, and recording the internal activations.</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/deco.png" alt="Cat in Mirror Autoencoder" style="max-width: 100%;">
+                </div>
+                
+                <p>So, training works like any other neural network:</p>
+                
+                <ol>
+                    <li>We give it an input (e.g. a 512-dimensional vector from a model).</li>
+                    <li>The encoder compresses it into a larger-but-sparse feature vector (say, 4,096 features, but only 20 are active).</li>
+                    <li>The decoder tries to reconstruct the original 512-vector using just those sparse activations.</li>
+                    <li>The model is penalized for two things:
+                        <ul>
+                            <li><strong>Reconstruction error:</strong> How far off it is from the original.</li>
+                            <li><strong>Too many active features:</strong> Encouraging sparsity.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <p>Over time, the autoencoder learns:</p>
+                
+                <ul>
+                    <li>A set of clean feature directions (via the decoder)</li>
+                    <li>A sparse encoding scheme that only activates what matters (via the encoder)</li>
+                </ul>
+                
+                <p>When applied to neural network internals SAEs give us:</p>
+                
+                <ul>
+                    <li>A way to <strong>see what concepts or features are active</strong></li>
+                    <li>A method to <strong>intervene and steer behavior</strong></li>
+                    <li>A cleaner, compressed language to describe what the model is doing</li>
+                </ul>
+                
+                <h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 15px;">How does a SAE work with a Language Model?</h3>
+                
+                <p>When we input a prompt into a language model - say, <em>"Generate a legal disclaimer in Arabic"</em> - the model processes it token by token, constructing internal representations at each step. At every layer, it forms activation vectors: dense, high-dimensional snapshots of what the model is "thinking" about each token in context. A token like <em>"legal"</em>, for instance, might yield a 512-dimensional vector capturing nuances such as tone, formality, domain-specific structure, and more.</p>
+                
+                <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; font-family: monospace; margin: 30px 0; white-space: pre-line; line-height: 1.5;">
+[Your Prompt]
+    ↓
+[Language Model]
+    ↓
+[Internal Activation Vector (e.g., from layer 6)]
+    ↓
+[Sparse Autoencoder Encoder]
+    ↓
+[Sparse Feature Activations → human-interpretable concepts]
+                </div>
+                
+                <p>This is where Sparse Autoencoders (SAEs) enter - not embedded inside the model, but operating alongside it. The SAE takes these dense activations and runs them through an encoder, expanding the signal into a much larger set of features - say 4,096 - but crucially, activating only a small, sparse subset. Each active feature corresponds to an interpretable concept the SAE has discovered. Rather than just observing that some neuron lit up, we can start to say things like:</p>
+                
+                <p><em>"The model appears to be thinking in terms of 'legal language' and 'Arabic script.'"</em> The decoder can even reconstruct the original activation from just this small set, confirming that the sparse features carry meaningful, information-rich content.</p>
+                
+                <p>This capability doesn't emerge magically. SAEs are trained on billions of activation vectors drawn from across many model prompts. Over time, they learn to disentangle the chaotic, overlapping signals present in dense activations and re-represent them as clean, modular, human-interpretable concepts.</p>
+                
+                <h2 style="font-size: 24px; margin-top: 40px; margin-bottom: 20px;">3. <a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/" target="_blank" style="color: inherit; text-decoration: underline;" class="heading-link no-hover-effect">Scaling Monosemanticity</a></h2>
+                
+                <p>In <em>Towards Monosemanticity</em>, Anthropic showed that sparse autoencoders could pull clean, interpretable features from a toy one-layer transformer. That was a proof of concept - valuable, but still in lab like conditions. The obvious next question was: <strong>can this scale?</strong> Could this technique make sense of real, production-scale models? Or would it break under the weight of modern complexity? In <em><a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/" target="_blank" style="color: inherit; text-decoration: underline;" class="no-hover-effect">Scaling Monosemanticity</a></em>, they successfully apply sparse autoencoders to <strong>Claude 3 Sonnet</strong> - a commercial-grade model orders of magnitude larger than the original setup. And the method still works.</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/scale.png" alt="Scaling Monosemanticity Meme" style="max-width: 100%;">
+                </div>
+                
+                <p>Key Takeaways:</p>
+                
+                <ul>
+                    <li>
+                        <strong>Sparse autoencoders scale to production-grade models.</strong>
+                        <p>What worked on a toy 1-layer model now works on Claude 3 Sonnet - a real, medium-sized language model used in the wild. This validates that monosemantic interpretability isn't just an academic trick; it's a viable tool for understanding actual deployed systems.</p>
+                    </li>
+                    <li>
+                        <strong>High-quality, abstract features emerge.</strong>
+                        <p>The autoencoder surfaces features tied to recognizable concepts: famous people, cities, countries, programming patterns, and more. These aren't fuzzy or partial - many are sharp, human-interpretable, and consistent across inputs.</p>
+                    </li>
+                    <li>
+                        <strong>Features generalize across languages and modalities.</strong>
+                        <p>Some features fire for the same concept in multiple languages and across text and images. That means these aren't shallow keyword triggers - they reflect deep, underlying representations the model has learned.</p>
+                    </li>
+                </ul>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/gg.png" alt="Golden Gate Bridge Feature Example" style="max-width: 100%;">
+                </div>
+                
+                <ul>
+                    <li>
+                        <strong>Features capture both concrete examples and abstract ideas.</strong>
+                        <p>For instance, one feature fires for actual insecure code, and also for abstract writing about security. This ability to unify different forms of the same idea suggests these features are tapping into real model reasoning - not surface correlations.</p>
+                    </li>
+                    <li>
+                        <strong>You can use these features to steer the model.</strong>
+                        <p>Activating a feature can <em>cause</em> the model to behave in line with that concept — e.g., generating text about a particular topic. This makes the features actionable, not just descriptive - a step toward controllability.</p>
+                    </li>
+                </ul>
+                
+                <h2 style="font-size: 24px; margin-top: 40px; margin-bottom: 20px;">Conclusion</h2>
+                
+                <p>Mechanistic interpretability is one of the most quietly important fields in AI today - yet barely anyone outside a small community is paying attention. Most people are still focused on building faster, bigger models. More layers, more data, more compute. But many of the most thoughtful researchers already suspect that <strong>true leaps - toward something like AGI - won't come from scaling alone</strong>. Not from another round of parameter inflation, or another clever workflow like chain-of-thought or Mixture-of-Experts. If that future arrives, it will come from an <strong>architectural breakthrough</strong> - something that fundamentally changes how models represent, reason, and generalize.</p>
+                
+                <p>Interpretability might be the first real glimpse of that shift.</p>
+                
+                <p>Sparse autoencoders and feature-based decomposition are early tools - they're beginning to peel back the layers of black-box models and show us that meaning isn't just emerging - it's structured.</p>
+                
+                <p>That's profound. Not just for aligning AI with human intent, but for understanding <strong>how intelligent systems think at all</strong>. In fact, this work might not just be about machines. It might be a mirror.</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="mi_images/agi.png" alt="AGI Bell Curve" style="max-width: 100%;">
+                </div>
+                
+                <p>For the first time in history, we can run live experiments on complex, high-dimensional "brains" that are learning, adapting, and compressing knowledge - without needing ethics boards or microscopes. We've never had this kind of substrate before. <strong>This might be our way to do neuroscience in silico</strong> - to study how learning and abstraction emerge, not just in silicon, but maybe in ourselves.</p>
+                
+                <div style="text-align: center; margin: 50px 0 30px 0;">
+                    <div style="font-family: 'Space Mono', monospace; text-align: center; margin-bottom: 30px;">
+                        ---X---
+                    </div>
+                    
+                    <a href="javascript:void(0);" onclick="copyToClipboard('https://nahatakarn.com/mech-interp.html')" style="display: inline-block; text-decoration: none; font-family: 'Space Mono', monospace; padding: 15px 30px; margin: 10px; border: 2px solid black; color: black; background-color: white; border-radius: 4px; font-weight: bold; box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); transition: all 0.2s ease; cursor: pointer;">
+                        Share this analysis
+                    </a>
+                    
+                    <div style="height: 30px;"></div>
+                    
+                    <a href="work.html" style="display: inline-block; text-decoration: none; font-family: 'Space Mono', monospace; padding: 15px 30px; margin: 10px; border: 2px solid black; color: black; background-color: white; border-radius: 4px; font-weight: bold; box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); transition: all 0.2s ease;">
+                        Learn more about my Work Ex
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="socials">
+            <a href="mailto:karn@stanford.edu" class="social-link">
+                <span class="social-icon">✉️</span>karn@stanford.edu
+            </a>
+            <a href="https://x.com/bluebrd003" target="_blank" class="social-link">
+                <span class="social-icon">𝕏</span>bluebrd003
+            </a>
+            <a href="https://www.linkedin.com/in/karnnahata/" target="_blank" class="social-link">
+                <span class="social-icon">🔗</span>LinkedIn
+            </a>
+        </div>
+    </footer>
+</body>
+</html> 
